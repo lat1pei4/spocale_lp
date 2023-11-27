@@ -11,7 +11,6 @@ import Navbar from "@/components/Navbar";
 
 // import required modules
 import { Autoplay, EffectFade } from "swiper/modules";
-import Image from "next/image";
 
 function Hero() {
   return (
