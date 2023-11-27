@@ -47,22 +47,45 @@ export const FEATURES = [
   },
 ];
 
+// FAQ SECTION
+export const faqs = [
+  {
+    id: 1,
+    question: "How often should I exercise?",
+    answer:
+      "Consectetur adipisicing elit. Non ipsa dolorem, rem consequatur eum omnis ex, fuga temporibus qui nesciunt odio aliquam commodi culpa inventore ut similique repellendus perferendis sint!",
+  },
+  {
+    id: 2,
+    question: "What time of day is best to work out?",
+    answer:
+      "Distinctio nihil blanditiis accusantium atque, quo maxime inventore eum! Cum dolorem quibusdam amet et qui. Eos, omnis beatae? Quas, est at! Molestiae quidem ab soluta exercitationem culpa nostrum iusto illum qui non a harum deserunt atque commodi at velit.",
+  },
+  {
+    id: 3,
+    question: "How long should my workouts be?",
+    answer:
+      "In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content.",
+  },
+  {
+    id: 4,
+    question: "Do I need to warm up before my workouts?",
+    answer:
+      "Molestiae quidem ab soluta exercitationem culpa nostrum iusto illum qui non a harum deserunt atque commodi at velit, consequatur quibusdam dignissimos cum labore possimus placeat consectetur nisi cupiditate? Qui totam est omnis dolor nobis quisquam veritatis a!",
+  },
+];
+
 // FOOTER SECTION
 export const FOOTER_LINKS = [
   {
     title: "Learn More",
-    links: [
-      "About Hilink",
-      "Press Releases",
-      "Environment",
-      "Jobs",
-      "Privacy Policy",
-      "Contact Us",
+    links: ["利用規約", "各種お問い合わせ", "プライバシーポリシー", "運営会社"],
+    hrefs: [
+      "https://spocale.com/terms",
+      "https://corp.spocale.com/contact/",
+      "https://spocale.com/privacy",
+      "https://corp.spocale.com",
     ],
-  },
-  {
-    title: "Our Community",
-    links: ["Climbing xixixi", "Hiking hilink", "Hilink kinthill"],
   },
 ];
 
@@ -76,11 +99,5 @@ export const FOOTER_CONTACT_INFO = {
 
 export const SOCIALS = {
   title: "Social",
-  links: [
-    "/facebook.svg",
-    "/instagram.svg",
-    "/twitter.svg",
-    "/youtube.svg",
-    "/wordpress.svg",
-  ],
+  links: ["/images/twitter.svg", "/images/facebook.svg"],
 };

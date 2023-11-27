@@ -28,7 +28,10 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "app/layout.jsx",
-    "app/page.jsx"
+    "app/page.jsx",
+    "components/Footer.jsx",
+    "constants/index.js",
+    "components/Navbar.jsx"
   ],
   "exclude": ["node_modules"]
 }

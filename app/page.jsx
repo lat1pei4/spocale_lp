@@ -1,19 +1,39 @@
+"use client";
+import { AnimatePresence } from "framer-motion";
+import { useEffect, useState } from "react";
+import Preloader from "../components/Preloader";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
-import Camp from "@/components/Camp";
-import Guide from "@/components/Guide";
-import Features from "@/components/Features";
-import GetApp from "@/components/GetApp";
+import Achievement from "@/components/Achievement";
 
 export default function Home() {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    (async () => {
+      const LocomotiveScroll = (await import("locomotive-scroll")).default;
+      const locomotiveScroll = new LocomotiveScroll();
+
+      setTimeout(() => {
+        setIsLoading(false);
+        document.body.style.cursor = "default";
+        window.scrollTo(0, 0);
+      }, 2000);
+    })();
+  }, []);
+
   return (
-    <>
-      <Hero />
-      <About />
-      {/* <Camp />
-      <Guide />
-      <Features />
-      <GetApp /> */}
-    </>
+    <main>
+      <AnimatePresence mode="wait">
+        {isLoading && <Preloader />}
+      </AnimatePresence>
+      {
+        <>
+          <Hero />
+          <About />
+          <Achievement />
+        </>
+      }
+    </main>
   );
 }

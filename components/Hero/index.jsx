@@ -1,12 +1,11 @@
 "use client";
-
-import React, { userRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "swiper/css/effect-fade";
-import "../css/hero.scss";
+import "./hero.scss";
+
 import Navbar from "@/components/Navbar";
 
 // import required modules
