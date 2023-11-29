@@ -8,42 +8,42 @@ export const NAV_LINKS = [
 ];
 
 // CAMP SECTION
-export const PEOPLE_URL = [
-  "/person-1.png",
-  "/person-2.png",
-  "/person-3.png",
-  "/person-4.png",
-];
+// export const PEOPLE_URL = [
+//   "/person-1.png",
+//   "/person-2.png",
+//   "/person-3.png",
+//   "/person-4.png",
+// ];
 
 // FEATURES SECTION
 export const FEATURES = [
   {
-    title: "Real maps can be offline",
+    title: "自分の推しチーム好きなスポーツをMYカレンダーに集めよう！",
     icon: "/map.svg",
     variant: "green",
     description:
-      "We provide a solution for you to be able to use our application when climbing, yes offline maps you can use at any time there is no signal at the location",
+      "「コレクション登録」を行うことで、好きなチームや気になる大会の試合観戦情報をMYカレンダーにまとめることができます。",
   },
   {
-    title: "Set an adventure schedule",
+    title: "試合情報やチケット発売情報をプッシュ通知でリマインド！",
     icon: "/calendar.svg",
     variant: "green",
     description:
-      "Schedule an adventure with friends. On holidays, there are many interesting offers from Hilink. That way, there's no more discussion",
+      "MYカレンダーに登録したカレンダーや試合は、試合開始前やチケット発売日にプッシュ通知でリマインドされます。プッシュ通知のタイミングをカスタマイズすることも可能です。",
   },
   {
-    title: "Technology using augment reality",
-    icon: "/tech.svg",
-    variant: "green",
-    description:
-      "Technology uses augmented reality as a guide to your hiking trail in the forest to the top of the mountain. Already supported by the latest technology without an internet connection",
-  },
-  {
-    title: "Many new locations every month",
+    title: "気になる試合は「みたい登録」でシェア！",
     icon: "/location.svg",
     variant: "orange",
     description:
-      "Lots of new locations every month, because we have a worldwide community of climbers who share their best experiences with climbing",
+      "気になる試合のメガホンアイコンをタップすると「みたい登録」が完了し友だちに試合情報をシェアすることができます。友だちと一緒に観戦するきっかけを作りましょう。",
+  },
+  {
+    title: "公式カレンダーやオリジナル着せ替えぞくぞくコラボ実施中！",
+    icon: "/tech.svg",
+    variant: "green",
+    description:
+      "スポカレに掲載するカレンダーは、多くのチームや大会に公式カレンダーとして認定されています。MYカレンダーをチーム・リーグ仕様に着せ替えできるオリジナル着せ替えテーマも配信中。徐々に配信チームを拡大しています。",
   },
 ];
 
@@ -51,27 +51,28 @@ export const FEATURES = [
 export const faqs = [
   {
     id: 1,
-    question: "How often should I exercise?",
+    question: "とにかくバスケが大好き！B1チームの予定をすべて把握したい！",
     answer:
-      "Consectetur adipisicing elit. Non ipsa dolorem, rem consequatur eum omnis ex, fuga temporibus qui nesciunt odio aliquam commodi culpa inventore ut similique repellendus perferendis sint!",
+      "B1チームを検索してコレクション登録！MYカレンダーに情報が集約されます！",
   },
   {
     id: 2,
-    question: "What time of day is best to work out?",
-    answer:
-      "Distinctio nihil blanditiis accusantium atque, quo maxime inventore eum! Cum dolorem quibusdam amet et qui. Eos, omnis beatae? Quas, est at! Molestiae quidem ab soluta exercitationem culpa nostrum iusto illum qui non a harum deserunt atque commodi at velit.",
+    question:
+      "競技は関係なく、地元のチームを応援したい！そんな日程のまとめ方って出来る？",
+    answer: "都道府県の試合情報をまとめたカレンダーがおすすめです！",
   },
   {
     id: 3,
-    question: "How long should my workouts be?",
+    question: "観戦が一番の趣味！一緒に観に行ってくれる友だちはいないかな？",
     answer:
-      "In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content.",
+      "「みたい登録」と「シェアボタン」の2つのシェア機能で、友だちに観戦したい気持ちをシェア！",
   },
   {
     id: 4,
-    question: "Do I need to warm up before my workouts?",
+    question:
+      "話題の試合や大会を追いかけたい！でも自分で探すのは大変...なにかいい方法はない？",
     answer:
-      "Molestiae quidem ab soluta exercitationem culpa nostrum iusto illum qui non a harum deserunt atque commodi at velit, consequatur quibusdam dignissimos cum labore possimus placeat consectetur nisi cupiditate? Qui totam est omnis dolor nobis quisquam veritatis a!",
+      "スポカレが厳選したオススメカレンダーや話題の試合を「おすすめ」ページで紹介！気になるカレンダーや試合はコレクション登録しよう！",
   },
 ];
 
@@ -89,15 +90,16 @@ export const FOOTER_LINKS = [
   },
 ];
 
-export const FOOTER_CONTACT_INFO = {
-  title: "Contact Us",
-  links: [
-    { label: "Admin Officer", value: "123-456-7890" },
-    { label: "Email Officer", value: "hilink@akinthil.com" },
-  ],
-};
+// export const FOOTER_CONTACT_INFO = {
+//   title: "Contact Us",
+//   links: [
+//     { label: "Admin Officer", value: "123-456-7890" },
+//     { label: "Email Officer", value: "hilink@akinthil.com" },
+//   ],
+// };
 
 export const SOCIALS = {
-  title: "Social",
+  title: "Socials",
   links: ["/images/twitter.svg", "/images/facebook.svg"],
+  urls: ["https://twitter.com/spocale_jp", "https://www.facebook.com/spocale/"],
 };

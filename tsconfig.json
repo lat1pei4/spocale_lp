@@ -27,11 +27,17 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
+    "next-env.d.js",
+    "**/*.js",
+    "**/*.jsx",
+    ".next/types/**/*.js",
     "app/layout.jsx",
     "app/page.jsx",
     "components/Footer.jsx",
     "constants/index.js",
-    "components/Navbar.jsx"
+    "components/Navbar.jsx",
+    "tailwind.config.js",
+    "components/Button.jsx"
   ],
   "exclude": ["node_modules"]
 }

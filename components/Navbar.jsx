@@ -26,7 +26,7 @@ const Navbar = () => {
         <Button
           type="button"
           title="Download"
-          icon="/user.svg"
+          icon="/images/downloads.png"
           variant="btn_dark_green"
         />
       </div>
