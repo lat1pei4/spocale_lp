@@ -3,7 +3,7 @@ import { Metadata } from "next";
 import Footer from "@/components/Footer";
 
 export const metadata = {
-  title: "スポカレ スポーツ日程更新中",
+  title: "スポカレ｜スポーツ日程更新中",
   description:
     "スポーツの試合日程、TV放送、ネット配信予定、チケット情報まとめ。地上波、BS、CSの放映スケジュール、DAZN、AbemaTVなどのOTTサービスでのライブ予定、ぴあ、ローチケ、LINEチケットなどのチケット発売日を網羅。HUBでの放映やスタジアム・アリーナ情報も。",
   ogTitle: "スポカレ スポーツ日程更新中",

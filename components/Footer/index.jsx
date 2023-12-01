@@ -9,12 +9,17 @@ const Footer = () => {
       <div className="padding-container max-container flex w-full flex-col gap-14">
         <div className="flex flex-col items-start justify-center gap-[10%] ">
           <Link href="/" className="mb-2 pl-2">
-            <Image src="images/logo.svg" alt="logo" width={225} height={45} />
+            <Image
+              src="images/logo_white.svg"
+              alt="logo"
+              width={225}
+              height={45}
+            />
           </Link>
-          <h2 className="pl-2 text-2xl font-bold text-white">
+          <h2 className="pl-1.5 text-2xl font-bold text-white">
             無料で手に入れよう！
           </h2>
-          <p className="pl-2 text-xl text-white">スポーツ観戦情報アプリ</p>
+          <p className="pl-1.5 text-xl text-white">スポーツ観戦情報アプリ</p>
           <div className="flex p-0 m-0">
             <Image
               src="images/ios_qrcode.png"

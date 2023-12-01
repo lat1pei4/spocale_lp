@@ -48,7 +48,7 @@ export const FEATURES = [
 ];
 
 // FAQ SECTION
-export const faqs = [
+export const FAQ = [
   {
     id: 1,
     question: "とにかくバスケが大好き！B1チームの予定をすべて把握したい！",
@@ -76,6 +76,58 @@ export const faqs = [
   },
 ];
 
+export const TESTIMONIALS = [
+  {
+    rate: 5,
+    title: "試合情報量は日本一",
+    content:
+      "プロアマの試合もここまで網羅してるのはスポカレ以外ない？1番見やすいし他にはないコンセプトが良い。スポーツファンやスポーツ界関係者は特にこの便利さに気付くはず。絶対入れるべき。以前は動作がややもたついたがOSアップデートすると改善するよ。あと運営の真摯な対応にとても好感が持てる。スポーツ界も大変な時期だけど乗り越えていこう！",
+    name: "スポーツギークさん",
+    date: "2021-02-10",
+  },
+  {
+    rate: 5,
+    title: "スポーツ好きには良いアプリ",
+    content:
+      "自分の好きなスポーツやチームの情報を収集できて便利でした。最初は好きなスポーツをお気に入り登録してみたけど、意外とあまり知らないスポーツ情報でも気になってくる。今までになかったアプリなのでしばらく使ってみようと思いました。",
+    name: "Hanumanさん",
+    date: "2020-03-13",
+  },
+  {
+    rate: 5,
+    title: "観戦計画を立てるのにも大変便利！",
+    content:
+      "Bリーグやトップリーグが好きなのですが、自分が好きなチームの試合をまとめて管理できるので、観たかった試合の見逃しが減りました。とても便利に使わせていただいております。…",
+    name: "^ ^〜♪さん",
+    date: "2021/03/30",
+  },
+  {
+    rate: 5,
+    title: "観戦初心者にありがたいアプリ",
+    content:
+      "2022W杯からサッカー見始めた初心者ですが、各試合が何で見られるかの情報もサッと見れるのがありがたいです。",
+    name: "はるしゃ芽さん",
+    date: "2023/01/04",
+  },
+  {
+    rate: 5,
+    title: "もっと早く知りたかったー！！",
+    content:
+      "自分が興味のあるスポーツの情報だけ入ってくるよう設定できます！オリンピックの観たい競技がありすぎるので、このカレンダーで整理して計画的に観戦できるようにしました。オリンピック以外も、ソフトバンクホークスの試合を登録。あとは海外で活躍している日本人選手の情報も気になるので、MLBのエンジェルス、NBAのウィザーズとラプターズを登録してます！",
+    name: "ペルシャ太郎さん",
+    date: "2021/07/27",
+  },
+  // Add more testimonials as needed
+];
+
+// export const FOOTER_CONTACT_INFO = {
+//   title: "Contact Us",
+//   links: [
+//     { label: "Admin Officer", value: "123-456-7890" },
+//     { label: "Email Officer", value: "hilink@akinthil.com" },
+//   ],
+// };
+
 // FOOTER SECTION
 export const FOOTER_LINKS = [
   {
@@ -89,14 +141,6 @@ export const FOOTER_LINKS = [
     ],
   },
 ];
-
-// export const FOOTER_CONTACT_INFO = {
-//   title: "Contact Us",
-//   links: [
-//     { label: "Admin Officer", value: "123-456-7890" },
-//     { label: "Email Officer", value: "hilink@akinthil.com" },
-//   ],
-// };
 
 export const SOCIALS = {
   title: "Socials",

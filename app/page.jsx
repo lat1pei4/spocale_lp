@@ -5,6 +5,7 @@ import Preloader from "../components/Preloader";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Achievement from "@/components/Achievement";
+import Testimonial from "@/components/Testimonial";
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
@@ -32,6 +33,7 @@ export default function Home() {
           <Hero />
           <About />
           <Achievement />
+          <Testimonial />
         </>
       }
     </main>

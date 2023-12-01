@@ -7,7 +7,7 @@ const Navbar = () => {
   return (
     <nav className="flexBetween max-container padding-container gap-5 absolute z-30 py-5 inset-x-0 top-0">
       <Link href="/">
-        <Image src="images/logo.svg" alt="logo" width={100} height={35} />
+        <Image src="images/logo_w.svg" alt="logo" width={100} height={35} />
       </Link>
 
       <ul className="hidden h-full gap-12 lg:flex">
@@ -25,7 +25,7 @@ const Navbar = () => {
       <div className="lg:flexCenter hidden">
         <Button
           type="button"
-          title="Download"
+          title="無料ダウンロード"
           icon="/images/downloads.png"
           variant="btn_dark_green"
         />

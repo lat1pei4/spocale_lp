@@ -1,4 +1,3 @@
-"use client";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
@@ -15,7 +14,7 @@ function Hero() {
   return (
     <>
       <Navbar />
-      <div className=" h-[100dvh] relative">
+      <div className=" h-[100dvh] w-[110dvw] flex flex-nowrap kv">
         <Swiper
           spaceBetween={3000}
           centeredSlides={true}

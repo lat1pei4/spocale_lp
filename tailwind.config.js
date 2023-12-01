@@ -8,6 +8,7 @@ export const theme = {
   extend: {
     colors: {
       green: {
+        20: "#1CC3D9",
         50: "#30AF5B",
         90: "#292C27",
       },
@@ -22,6 +23,8 @@ export const theme = {
         50: "#FF814C",
       },
       blue: {
+        50: "#67BFF7",
+        60: "#0295F2",
         70: "#021639",
       },
       yellow: {
