@@ -1,0 +1,114 @@
+.faq {
+  background-color: #67bff7;
+  padding: 20px;
+  padding-top: 0px;
+  margin: 0px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  height: 100%;
+  width: 100%;
+  position: relative;
+  z-index: 1000;
+  border-radius: 4px;
+  overflow: hidden;
+  // box-shadow: 0px 13px 23px -13px rgba(0, 0, 0, 0.5);
+}
+
+.accordion {
+  // box-shadow: 0px 13px 23px -13px rgba(0, 0, 0, 0.5);
+  width: 80%;
+  margin: auto;
+  margin: 50px auto;
+}
+
+.title {
+  height: 10%;
+  width: 100%;
+  font-size: 1.5rem;
+  text-align: left;
+  position: relative;
+  padding: 1vmin;
+  padding-left: 5vmin;
+  z-index: 2000;
+  border-radius: 4px;
+  transition: all 0.2s ease-in;
+  margin-top: 45px;
+  background-color: #ebebeb;
+
+  &::after {
+    content: url("../../public/images/faq_1.svg");
+    position: absolute;
+    scale: 0.5;
+    top: -70px;
+    left: -40px;
+    width: 150px;
+    height: 200px;
+    z-index: 10000;
+  }
+
+  &-text {
+    margin-left: 10px;
+  }
+
+  &:hover {
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+  &:active {
+    background-color: rgba(0, 0, 0, 0.55);
+  }
+}
+
+.accordionItem {
+  .content {
+    height: 30px;
+    width: 100%;
+    background-color: transparent;
+    border-radius: 4px;
+    padding-left: 5vmin;
+    font-size: 1.3rem;
+    text-align: center;
+    position: relative;
+    z-index: 1000;
+    margin-top: -30px;
+    text-align: left;
+    transition: all 200ms cubic-bezier(0.6, -0.28, 0.735, 0.045);
+    padding-bottom: 10px;
+
+    &-open {
+      margin-top: 0px;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.1);
+      transition: all 350ms cubic-bezier(0.08, 1.09, 0.32, 1.275);
+    }
+
+    &-text {
+      padding: 15px;
+      visibility: hidden;
+      opacity: 0;
+      overflow: auto;
+      transition: all 0.2s ease-in;
+    }
+
+    &-text-open {
+      visibility: visible;
+      opacity: 1;
+      transition: all 0.8s ease-in;
+    }
+  }
+}
+.fa-angle-down {
+  font-size: 20px;
+  color: rgba(255, 255, 255, 0.5);
+  transition: all 0.6s cubic-bezier(0.08, 1.09, 0.32, 1.275);
+}
+
+.fa-rotate-180 {
+  color: rgba(255, 255, 255, 1);
+}
+
+.arrow-wrapper {
+  position: absolute;
+  margin-left: 375px;
+}

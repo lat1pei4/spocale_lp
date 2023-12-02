@@ -6,6 +6,7 @@ import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Achievement from "@/components/Achievement";
 import Testimonial from "@/components/Testimonial";
+import Faq from "@/components/Faq";
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
@@ -34,6 +35,7 @@ export default function Home() {
           <About />
           <Achievement />
           <Testimonial />
+          <Faq />
         </>
       }
     </main>

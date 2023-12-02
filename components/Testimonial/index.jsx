@@ -1,12 +1,11 @@
 import React, { useRef, useState } from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
-import { NAV_LINKS, TESTIMONIALS } from "@/constants";
+import { TESTIMONIALS } from "@/constants";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
-
 import "./testimonial.scss";
 
 // import required modules
