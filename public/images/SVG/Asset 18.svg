@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1558.13 1002.3">
+  <defs>
+    <style>
+      .cls-1 {
+        letter-spacing: -.12em;
+      }
+
+      .cls-2 {
+        letter-spacing: -.02em;
+      }
+
+      .cls-3 {
+        letter-spacing: -.04em;
+      }
+
+      .cls-4 {
+        fill: #ccc;
+        font-family: Trailmade-Italic, Trailmade;
+        font-size: 836.65px;
+        font-style: italic;
+        opacity: .3;
+      }
+
+      .cls-5 {
+        letter-spacing: -.03em;
+      }
+    </style>
+  </defs>
+  <g id="Layer_1-2" data-name="Layer 1">
+    <text class="cls-4" transform="translate(0 732.07)"><tspan class="cls-1" x="0" y="0">F</tspan><tspan class="cls-5" x="230.08" y="0">ea</tspan><tspan class="cls-2" x="648.41" y="0">tu</tspan><tspan class="cls-3" x="1019.87" y="0">r</tspan><tspan class="cls-5" x="1184.69" y="0">e</tspan><tspan class="cls-2" x="1388" y="0">s</tspan></text>
+  </g>
+</svg>

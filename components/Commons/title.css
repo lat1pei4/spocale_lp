@@ -1,0 +1,35 @@
+.sectionTitle {
+  height: 10%;
+  width: auto;
+  font-size: 2.5rem;
+  text-align: center;
+  font-weight: 700;
+  color: #2e2e2e;
+  position: relative;
+  padding: 1vmin;
+  padding-left: 5vmin;
+  z-index: 2000;
+  border-radius: 4px;
+  transition: all 0.2s ease-in;
+  margin-top: 70px;
+}
+.sectionTitle .background-image {
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
+.sectionTitle .deco-line-background {
+  background: url("../../public/images/title_deco_line_w.svg") center/contain no-repeat;
+  opacity: 0.8;
+  left: 52%;
+}
+.sectionTitle .title-background {
+  background: url("../../public/images/title_sectionName.svg") center/contain no-repeat;
+  scale: 1;
+  width: 200%;
+  height: 200%;
+}/*# sourceMappingURL=title.css.map */

@@ -37,7 +37,7 @@
     "constants/index.js",
     "components/Navbar.jsx",
     "tailwind.config.js",
-    "components/Button.jsx",
+    "components/Commons/Button.jsx",
     "components/Testimonial.jsx"
   ],
   "exclude": ["node_modules"]

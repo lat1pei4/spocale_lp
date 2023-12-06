@@ -9,12 +9,13 @@ import Navbar from "@/components/Navbar";
 
 // import required modules
 import { Autoplay, EffectFade } from "swiper/modules";
+import Image from "next/image";
 
 function Hero() {
   return (
     <>
       <Navbar />
-      <div className=" h-[100dvh] w-[110dvw] flex flex-nowrap kv">
+      <div className=" h-[100dvh] w-[110dvw] flex flex-nowrap kv relative">
         <Swiper
           spaceBetween={3000}
           centeredSlides={true}
@@ -63,6 +64,13 @@ function Hero() {
             <div className="bg right_02"></div>
           </SwiperSlide>
         </Swiper>
+        <Image
+          src="/images/catch_copy.svg"
+          alt="catch_copy"
+          width={400}
+          height={300}
+          className="absolute top-1/2 left-[47%] transform -translate-x-1/2 -translate-y-1/2 z-10"
+        />
       </div>
     </>
   );

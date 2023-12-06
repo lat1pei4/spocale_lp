@@ -33,16 +33,6 @@
   margin-top: 45px;
   background-color: #ebebeb;
 }
-.title::after {
-  content: url("../../public/images/faq_1.svg");
-  position: absolute;
-  scale: 0.5;
-  top: -70px;
-  left: -40px;
-  width: 150px;
-  height: 200px;
-  z-index: 10000;
-}
 .title-text {
   margin-left: 10px;
 }
@@ -52,6 +42,50 @@
 }
 .title:active {
   background-color: rgba(0, 0, 0, 0.55);
+}
+
+.q1::after {
+  content: url("../../public/images/faq_1.svg");
+  position: absolute;
+  scale: 0.5;
+  top: -63px;
+  left: -50px;
+  width: 150px;
+  height: 200px;
+  z-index: 10000;
+}
+
+.q2::after {
+  content: url("../../public/images/faq_2.svg");
+  position: absolute;
+  scale: 0.5;
+  top: -63px;
+  left: -50px;
+  width: 150px;
+  height: 200px;
+  z-index: 10000;
+}
+
+.q3::after {
+  content: url("../../public/images/faq_3.svg");
+  position: absolute;
+  scale: 0.5;
+  top: -63px;
+  left: -50px;
+  width: 150px;
+  height: 200px;
+  z-index: 10000;
+}
+
+.q4::after {
+  content: url("../../public/images/faq_4.svg");
+  position: absolute;
+  scale: 0.5;
+  top: -63px;
+  left: -50px;
+  width: 150px;
+  height: 200px;
+  z-index: 10000;
 }
 
 .accordionItem .content {

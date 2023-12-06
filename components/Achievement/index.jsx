@@ -5,8 +5,8 @@ import Image from "next/image";
 function Achievement() {
   return (
     <div className="w-full h-[90dvh] bg-blue flex justify-center items-center ">
-      <div class="achievement__container ">
-        <div class="item i1 flex justify-center items-center">
+      <div className="achievement__container ">
+        <div className="item i1 flex justify-center items-center">
           <Image
             src="/images/acheivement_4.svg"
             width={400}
@@ -14,7 +14,7 @@ function Achievement() {
             alt="acheivement"
           />
         </div>
-        <div class="item i2 flex justify-center items-center">
+        <div className="item i2 flex justify-center items-center">
           <Image
             src="/images/acheivement_5.svg"
             alt="acheivement"
@@ -22,7 +22,7 @@ function Achievement() {
             height={500}
           />
         </div>
-        <div class="item i3 flex justify-center items-center">
+        <div className="item i3 flex justify-center items-center">
           <Image
             src="/images/acheivement_1.svg"
             alt="acheivement"
@@ -30,7 +30,7 @@ function Achievement() {
             height={500}
           />
         </div>
-        <div class="item i4 flex justify-center items-center">
+        <div className="item i4 flex justify-center items-center">
           <Image
             src="/images/acheivement_3.svg"
             alt="acheivement"
@@ -38,7 +38,7 @@ function Achievement() {
             height={500}
           />
         </div>
-        <div class="item i5 flex justify-center items-center">
+        <div className="item i5 flex justify-center items-center">
           <Image
             src="/images/acheivement_2.svg"
             alt="acheivement"
