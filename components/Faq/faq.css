@@ -8,7 +8,6 @@
   min-height: 60dvh;
   width: 100dvw;
   position: relative;
-  z-index: 1;
   border-radius: 4px;
   overflow: hidden;
 }
@@ -27,7 +26,6 @@
   position: relative;
   padding: 1vmin;
   padding-left: 5vmin;
-  z-index: 2000;
   border-radius: 4px;
   transition: all 0.2s ease-in;
   margin-top: 45px;
@@ -52,7 +50,6 @@
   left: -50px;
   width: 150px;
   height: 200px;
-  z-index: 10000;
 }
 
 .q2::after {
@@ -63,7 +60,6 @@
   left: -50px;
   width: 150px;
   height: 200px;
-  z-index: 10000;
 }
 
 .q3::after {
@@ -74,7 +70,6 @@
   left: -50px;
   width: 150px;
   height: 200px;
-  z-index: 10000;
 }
 
 .q4::after {
@@ -85,7 +80,6 @@
   left: -50px;
   width: 150px;
   height: 200px;
-  z-index: 10000;
 }
 
 .accordionItem .content {

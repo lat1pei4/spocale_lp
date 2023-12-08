@@ -4,7 +4,7 @@ import "./about.scss";
 
 const About = () => {
   return (
-    <section className="w-full h-screen relative about">
+    <section id="aboutUs" className="w-full h-screen relative">
       <div className="flex flex-1 lg:min-h-[900px] overflow-hidden">
         <Image
           src="/images/phone.png"

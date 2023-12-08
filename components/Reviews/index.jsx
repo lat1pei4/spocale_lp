@@ -1,10 +1,10 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-import { TESTIMONIALS } from "@/constants";
+import { REVIEWS } from "@/constants";
 import Title from "../Commons/Title";
 import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
-import "./testimonial.scss";
+import "./reviews.scss";
 
 // import required modules
 import { EffectCoverflow, Pagination } from "swiper/modules";
@@ -13,14 +13,14 @@ import Image from "next/image";
 function index() {
   return (
     <>
-      <section className="testimonial">
+      <section id="reviews">
         <Title backgroundImage="bg-bg-review">ユーザーの声</Title>
         <Swiper
           effect={"coverflow"}
           grabCursor={false}
           slidesPerView={"5"}
           centeredSlides={true}
-          initialSlide={2}
+          initialSlide={3}
           coverflowEffect={{
             rotate: 0,
             stretch: 0,
@@ -32,7 +32,7 @@ function index() {
           modules={[EffectCoverflow, Pagination]}
           id="swiper"
         >
-          {TESTIMONIALS.map((testimonial, index) => (
+          {REVIEWS.map((testimonial, index) => (
             <SwiperSlide id="swiper-slide" key={index}>
               <div className="testimonialBox">
                 <Image
@@ -41,6 +41,7 @@ function index() {
                   alt=""
                   width="50"
                   height="50"
+                  style={{ height: 50, width: 50 }}
                 />
                 <div className="content">
                   <h2>{testimonial.title}</h2>

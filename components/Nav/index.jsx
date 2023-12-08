@@ -8,25 +8,6 @@ import Curve from "./Curve";
 import Footer from "./Footer";
 import { NAV_LINKS } from "@/constants";
 
-// const navItems = [
-//   {
-//     title: "ABOUT US",
-//     href: "/",
-//   },
-//   {
-//     title: "Work",
-//     href: "/work",
-//   },
-//   {
-//     title: "About",
-//     href: "/about",
-//   },
-//   {
-//     title: "Contact",
-//     href: "/contact",
-//   },
-// ];
-
 export default function Index() {
   const pathname = usePathname();
   const [selectedIndicator, setSelectedIndicator] = useState(pathname);

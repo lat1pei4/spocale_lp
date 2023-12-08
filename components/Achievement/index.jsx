@@ -5,7 +5,7 @@ import Title from "../Commons/Title";
 
 function Achievement() {
   return (
-    <section className="achievement">
+    <section id="achievements">
       <Title backgroundImage="bg-bg-achieve">実績</Title>
       <div className="w-full h-[90dvh] bg-blue flex justify-center items-center ">
         <div className="achievement__container ">

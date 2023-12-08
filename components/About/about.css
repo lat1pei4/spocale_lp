@@ -1,10 +1,10 @@
-.about {
+#aboutUs {
   position: relative;
   width: 100dvw;
   height: 100dvh;
   overflow: hidden;
 }
-.about::after {
+#aboutUs::after {
   content: "";
   position: absolute;
   width: 150%; /* Set the diameter of the circle */

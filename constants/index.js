@@ -1,9 +1,9 @@
 // NAVIGATION
 export const NAV_LINKS = [
-  { href: "/aboutus", key: "about us", label: "ABOUT US" },
-  { href: "/features", key: "features", label: "FEATURES " },
-  { href: "/reviews", key: "reviews", label: "REVIEWS" },
-  { href: "/achievements", key: "achievements", label: "ACHIEVEMENTS" },
+  { href: "#aboutUs", key: "about us", label: "ABOUT US" },
+  { href: "#features", key: "features", label: "FEATURES " },
+  { href: "#achievements", key: "achievements", label: "ACHIEVEMENTS" },
+  { href: "#reviews", key: "reviews", label: "REVIEWS" },
   { href: "#faq", key: "faqs", label: "FAQs" },
 ];
 
@@ -76,7 +76,15 @@ export const FAQ = [
   },
 ];
 
-export const TESTIMONIALS = [
+export const REVIEWS = [
+  {
+    rate: 4,
+    title: "良い",
+    content:
+      "試合日程や時間、場所を把握するのにかなり便利です。また、チケット購入までそのままいけちゃうので過去にないあぷり！",
+    name: "mi.itさん",
+    date: "2018-10-27",
+  },
   {
     rate: 5,
     title: "試合情報量は日本一",
@@ -116,6 +124,14 @@ export const TESTIMONIALS = [
       "自分が興味のあるスポーツの情報だけ入ってくるよう設定できます！オリンピックの観たい競技がありすぎるので、このカレンダーで整理して計画的に観戦できるようにしました。オリンピック以外も、ソフトバンクホークスの試合を登録。あとは海外で活躍している日本人選手の情報も気になるので、MLBのエンジェルス、NBAのウィザーズとラプターズを登録してます！",
     name: "ペルシャ太郎さん",
     date: "2021/07/27",
+  },
+  {
+    rate: 4,
+    title: "もっと早く知りたかったー！！",
+    content:
+      "好きなスポーツ、チームの試合日程、放送日程が簡単に確認出来ます。見やすいし使いやすいと思います。幅広いスポーツに対応してます。今日、来週、来月は試合あるかなって時にとても便利です。結果はわからないようになってます。完全無料で変な広告が出る事も無いし満足出来てます。",
+    name: "B'z921さん",
+    date: "2020/08/13",
   },
   // Add more testimonials as needed
 ];

@@ -38,7 +38,8 @@
     "components/Navbar.jsx",
     "tailwind.config.js",
     "components/Commons/Button.jsx",
-    "components/Testimonial.jsx"
+    "components/Testimonial.jsx",
+    "components/Nav/animaion.js"
   ],
   "exclude": ["node_modules"]
 }

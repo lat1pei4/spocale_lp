@@ -93,12 +93,12 @@ const Navbar = () => {
           onClick={() => {
             setIsActive(!isActive);
           }}
-          className={`${styles.button}`}
+          className={`${styles.button} z-10`}
         >
           <div
             className={`${styles.burger} ${
               isActive ? styles.burgerActive : ""
-            }`}
+            } z-11`}
           ></div>
         </Rounded>
       </div>
