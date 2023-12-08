@@ -1,17 +1,13 @@
-section {
-  position: relative;
-  width: 100%;
-  min-height: 100dvh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: #2196f3;
+.testimonial {
+  width: 100dvw;
+  min-height: 90dvh;
+  background: #67bff7;
   overflow: hidden;
 }
 
 #swiper {
   width: 100%;
-  padding-top: 60px;
+  padding-top: 15vh;
   padding-bottom: 50px;
 }
 

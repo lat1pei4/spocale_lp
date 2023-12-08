@@ -1,10 +1,10 @@
 // NAVIGATION
 export const NAV_LINKS = [
-  { href: "/", key: "about", label: "ABOUT" },
-  { href: "/", key: "features", label: "FEATURES " },
-  { href: "/", key: "reviews", label: "REVIEWS" },
-  { href: "/", key: "achievement", label: "ACHIEVEMENT" },
-  { href: "/", key: "faq", label: "FAQ" },
+  { href: "/aboutus", key: "about us", label: "ABOUT US" },
+  { href: "/features", key: "features", label: "FEATURES " },
+  { href: "/reviews", key: "reviews", label: "REVIEWS" },
+  { href: "/achievements", key: "achievements", label: "ACHIEVEMENTS" },
+  { href: "#faq", key: "faqs", label: "FAQs" },
 ];
 
 // CAMP SECTION

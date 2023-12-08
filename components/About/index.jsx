@@ -4,14 +4,14 @@ import "./about.scss";
 
 const About = () => {
   return (
-    <div className="w-full h-screen relative intro">
-      <div className="flex flex-1 lg:min-h-[900px]">
+    <section className="w-full h-screen relative about">
+      <div className="flex flex-1 lg:min-h-[900px] overflow-hidden">
         <Image
           src="/images/phone.png"
           alt="phone"
           width={1000}
           height={100}
-          className="absolute right-0 z-[0]"
+          className="absolute right-0 bottom-0 z-[0]"
         />
         <div className="flex flex-col justify-center p-20 w-[50vw]">
           <h2 className="text-4xl font-bold">
@@ -26,7 +26,7 @@ const About = () => {
           </p>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

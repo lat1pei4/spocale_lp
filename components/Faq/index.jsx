@@ -48,10 +48,10 @@ const Accordion = ({ data }) => {
 
 const Faq = () => {
   return (
-    <div className="faq">
-      <Title sectionName={faqs}>よくある質問</Title>
+    <section id="faq">
+      <Title backgroundImage="bg-bg-faqs">よくある質問</Title>
       <Accordion data={FAQ} />
-    </div>
+    </section>
   );
 };
 

@@ -1,8 +1,6 @@
-import React, { useRef, useState } from "react";
-// Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 import { TESTIMONIALS } from "@/constants";
-// Import Swiper styles
+import Title from "../Commons/Title";
 import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
@@ -15,12 +13,14 @@ import Image from "next/image";
 function index() {
   return (
     <>
-      <section>
+      <section className="testimonial">
+        <Title backgroundImage="bg-bg-review">ユーザーの声</Title>
         <Swiper
           effect={"coverflow"}
           grabCursor={false}
+          slidesPerView={"5"}
           centeredSlides={true}
-          slidesPerView={"auto"}
+          initialSlide={2}
           coverflowEffect={{
             rotate: 0,
             stretch: 0,

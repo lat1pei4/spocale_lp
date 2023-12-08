@@ -1,19 +1,20 @@
-.faq {
+#faq {
   background-color: #67bff7;
   padding: 20px;
   padding-top: 0px;
   margin: 0px;
   margin-top: 0px;
   margin-bottom: 0px;
-  height: 100%;
-  width: 100%;
+  min-height: 60dvh;
+  width: 100dvw;
   position: relative;
-  z-index: 1000;
+  z-index: 1;
   border-radius: 4px;
   overflow: hidden;
 }
 
 .accordion {
+  // padding-top: 0.5vh;
   width: 80%;
   margin: auto;
   margin: 50px auto;

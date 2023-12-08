@@ -1,3 +1,9 @@
+.achievement {
+  width: 100dvw;
+  min-height: 60dvh;
+  background-color: #67bff7;
+}
+
 .achievement__container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
@@ -10,8 +16,9 @@
     "i1 i1 i1 i3 i3 i3"
     "i4 i4 i5 i5 i5 i5"
     "i4 i4 i5 i5 i5 i5";
-  width: 60%;
-  height: 90%;
+  min-width: 60%;
+  height: auto;
+  padding: 4vmin 6vmin;
   position: relative;
 }
 

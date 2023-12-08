@@ -37,6 +37,11 @@ export const theme = {
       "feature-bg": "url('/feature-bg.png')",
       pattern: "url('/pattern.png')",
       "pattern-2": "url('/pattern-bg.png')",
+      "bg-about": "url('/public/images/title_about.svg')",
+      "bg-feat": "url('/public/images/title_feat.svg')",
+      "bg-achieve": "url('/images/title_achieve.svg')",
+      "bg-review": "url('/images/title_reviews.svg')",
+      "bg-faqs": "url('/images/title_faqs.svg')",
     },
     screens: {
       xs: "400px",
