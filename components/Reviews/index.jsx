@@ -18,7 +18,7 @@ function index() {
         <Swiper
           effect={"coverflow"}
           grabCursor={false}
-          slidesPerView={"5"}
+          slidesPerView={"auto"}
           centeredSlides={true}
           initialSlide={3}
           coverflowEffect={{
@@ -29,6 +29,7 @@ function index() {
             slideShadows: false,
           }}
           pagination={true}
+          loop={true}
           modules={[EffectCoverflow, Pagination]}
           id="swiper"
         >

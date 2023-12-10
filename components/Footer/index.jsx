@@ -1,12 +1,21 @@
-// import styles from "./style.module.scss";
+"use client";
 import { FOOTER_CONTACT_INFO, FOOTER_LINKS, SOCIALS } from "@/constants";
 import Image from "next/image";
 import Link from "next/link";
+import { useRef } from "react";
+import { useScroll, motion, useTransform, useSpring } from "framer-motion";
 
 const Footer = () => {
+  const container = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: container,
+    offset: ["start end", "end end"],
+  });
+  const y = useTransform(scrollYProgress, [0, 1], [-200, -300]);
+
   return (
-    <footer className="flexCenter mb-24 bg-[#67BFF7]">
-      <div className="padding-container max-container flex w-full flex-col gap-14">
+    <footer className=" w-[100dvw] z-[-1]">
+      <div className="padding-container  flex w-full flex-col gap-14 h-[80dvh] bg-[#67bff7]">
         <div className="flex flex-col items-start justify-center gap-[10%] ">
           <Link href="/" className="mb-2 pl-2">
             <Image

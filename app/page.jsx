@@ -4,9 +4,11 @@ import { useEffect, useState } from "react";
 import Preloader from "../components/Preloader";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
+import Features from "@/components/Features";
 import Achievement from "@/components/Achievement";
 import Reviews from "@/components/Reviews";
 import Faq from "@/components/Faq";
+import Lenis from "@studio-freight/lenis";
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
@@ -24,6 +26,17 @@ export default function Home() {
     })();
   }, []);
 
+  useEffect(() => {
+    const lenis = new Lenis();
+
+    const raf = (time) => {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    };
+
+    requestAnimationFrame(raf);
+  }, []);
+
   return (
     <main>
       <AnimatePresence mode="wait">
@@ -33,6 +46,7 @@ export default function Home() {
         <>
           <Hero />
           <About />
+          <Features />
           <Achievement />
           <Reviews />
           <Faq />

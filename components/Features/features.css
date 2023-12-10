@@ -1,0 +1,59 @@
+#features {
+  width: 100dvw;
+  min-height: 100dvh;
+  background-color: #67bff7;
+}
+#features .feat {
+  width: 100%;
+  position: relative;
+}
+#features .feat--01 {
+  background-color: blue;
+  height: 100dvh;
+  border: 1px solid red;
+}
+#features .feat--02 {
+  min-height: 80dvh;
+}
+#features .feat--03 {
+  min-height: 80dvh;
+}
+#features .feat--04 {
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
+
+.galleryImages {
+  display: flex;
+  height: 60%;
+  flex-direction: column;
+  gap: 3vw;
+  position: relative;
+  z-index: 1;
+}
+.galleryImages .gallery {
+  display: flex;
+  position: relative;
+  height: 27%;
+  gap: 3vw;
+  width: 120dvw;
+  left: -10dvw;
+}
+.galleryImages .gallery .project {
+  width: 15%;
+  height: 18dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+}
+.galleryImages .gallery .project .imageContainer {
+  position: relative;
+  width: 80%;
+  height: 80%;
+}
+.galleryImages .gallery .project .imageContainer img {
+  -o-object-fit: cover;
+     object-fit: cover;
+}/*# sourceMappingURL=features.css.map */

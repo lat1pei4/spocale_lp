@@ -18,29 +18,26 @@ export const NAV_LINKS = [
 // FEATURES SECTION
 export const FEATURES = [
   {
+    id: 1,
     title: "自分の推しチーム好きなスポーツをMYカレンダーに集めよう！",
-    icon: "/map.svg",
     variant: "green",
     description:
       "「コレクション登録」を行うことで、好きなチームや気になる大会の試合観戦情報をMYカレンダーにまとめることができます。",
   },
   {
     title: "試合情報やチケット発売情報をプッシュ通知でリマインド！",
-    icon: "/calendar.svg",
     variant: "green",
     description:
       "MYカレンダーに登録したカレンダーや試合は、試合開始前やチケット発売日にプッシュ通知でリマインドされます。プッシュ通知のタイミングをカスタマイズすることも可能です。",
   },
   {
     title: "気になる試合は「みたい登録」でシェア！",
-    icon: "/location.svg",
     variant: "orange",
     description:
       "気になる試合のメガホンアイコンをタップすると「みたい登録」が完了し友だちに試合情報をシェアすることができます。友だちと一緒に観戦するきっかけを作りましょう。",
   },
   {
     title: "公式カレンダーやオリジナル着せ替えぞくぞくコラボ実施中！",
-    icon: "/tech.svg",
     variant: "green",
     description:
       "スポカレに掲載するカレンダーは、多くのチームや大会に公式カレンダーとして認定されています。MYカレンダーをチーム・リーグ仕様に着せ替えできるオリジナル着せ替えテーマも配信中。徐々に配信チームを拡大しています。",
@@ -134,6 +131,18 @@ export const REVIEWS = [
     date: "2020/08/13",
   },
   // Add more testimonials as needed
+];
+
+export const GALLERY1 = [
+  {
+    src: "/images/gallery1.png",
+  },
+  {
+    src: "/images/gallery2.png",
+  },
+  {
+    src: "/images/gallery3.png",
+  },
 ];
 
 // export const FOOTER_CONTACT_INFO = {

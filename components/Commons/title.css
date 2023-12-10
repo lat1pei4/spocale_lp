@@ -27,6 +27,11 @@
   opacity: 0.8;
   left: 52%;
 }
+.sectionTitle .deco-line-background-blue {
+  background: url("../../public/images/title_deco_line_b.svg") center/contain no-repeat;
+  opacity: 0.8;
+  left: 52%;
+}
 .sectionTitle .title-background {
   width: 200%;
   height: 200%;
