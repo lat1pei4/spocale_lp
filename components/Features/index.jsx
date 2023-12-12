@@ -1,7 +1,8 @@
 import React, { useRef } from "react";
 import "./features.scss";
-import { FEATURES } from "../../constants";
+import { FEATURES, ICONS, LOGO_ANIMATION } from "../../constants";
 import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
 import { useScroll, useTransform, motion } from "framer-motion";
 
@@ -125,10 +126,86 @@ function Features() {
 
   // end of Gallery animation settings
 
+  // Logo animation settings
+  gsap.registerPlugin(ScrollTrigger);
+  gsap.set(".iphone", { left: "-10%", top: "15%", rotation: 90 });
+  gsap.set(".icons", { x: 350, y: 300, scale: 0, opacity: 0 });
+
+  function iphoneAnimation() {
+    const tl = gsap.timeline({ defaults: { duration: 3 } });
+    tl.to(".iphone", {
+      left: "13%",
+      rotation: 0,
+      scale: 0.9,
+      ease: "back",
+    }).to(".iphone", {
+      duration: 3,
+      scale: 1,
+    });
+    return tl;
+  }
+
+  function iconAnimation() {
+    const tl = gsap.timeline();
+    tl.to(".icons", { duration: 0, opacity: 1 });
+    return tl;
+  }
+
+  const startTime = 3;
+  const masterTimeline = gsap.timeline();
+  masterTimeline.add(iphoneAnimation()).add(iconAnimation(), startTime);
+
+  LOGO_ANIMATION.forEach((animation, index) => {
+    const { selector, duration, scale, x, y, ease } = animation;
+    const element = document.querySelector(selector);
+    masterTimeline.add(
+      gsap.to(element, { duration, scale, x, y, ease }),
+      startTime + (index % 3) / 2
+    );
+  });
+
+  ScrollTrigger.create({
+    animation: masterTimeline,
+    trigger: ".feat--01",
+    start: "80% bottom",
+    end: "bottom bottom",
+    scrub: 1,
+    // markers: true,
+  });
+
+  // end of Logo animation settings
+
   return (
     <div id="features">
       <div className="feat feat--01">
-        <div className="feat--title regular-40">{FEATURES[0].title}</div>
+        <div className="feat--title regular-40 text-white absolute top-[20dvh] w-[450px] left-[50dvw]">
+          {FEATURES[0].title}
+        </div>
+        <div className="feat--content regular-24 w-[40dvw] p-10 bg-[#ebebeb] rounded-2xl absolute bottom-[40vh] left-[50dvw] z-[0.5]">
+          {FEATURES[0].description}
+        </div>
+        <div className="animation">
+          <Image
+            src="/images/feat_01_phone.png"
+            width={350}
+            height={850}
+            alt="feature 01 phone visual"
+            className="iphone"
+          />
+          {ICONS.map((icon, index) => {
+            return (
+              <Image
+                key={index}
+                src={icon.src}
+                width="200"
+                height="200"
+                alt="leauge logo"
+                className="icons"
+                id={`logo_${index + 1}`}
+              />
+            );
+          })}
+        </div>
       </div>
       <div className="feat feat--02">
         <Image

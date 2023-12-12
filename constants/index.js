@@ -133,25 +133,109 @@ export const REVIEWS = [
   // Add more testimonials as needed
 ];
 
-export const GALLERY1 = [
+export const ICONS = [
   {
-    src: "/images/gallery1.png",
+    src: "/images/feat_logo_01.svg",
   },
   {
-    src: "/images/gallery2.png",
+    src: "/images/feat_logo_02.svg",
   },
   {
-    src: "/images/gallery3.png",
+    src: "/images/feat_logo_03.svg",
+  },
+  {
+    src: "/images/feat_logo_04.svg",
+  },
+  {
+    src: "/images/feat_logo_05.svg",
+  },
+  {
+    src: "/images/feat_logo_06.svg",
+  },
+  {
+    src: "/images/feat_logo_07.svg",
+  },
+  {
+    src: "/images/feat_logo_08.svg",
   },
 ];
 
-// export const FOOTER_CONTACT_INFO = {
-//   title: "Contact Us",
-//   links: [
-//     { label: "Admin Officer", value: "123-456-7890" },
-//     { label: "Email Officer", value: "hilink@akinthil.com" },
-//   ],
-// };
+export const LOGO_ANIMATION = [
+  {
+    //UEFA
+    selector: "#logo_8",
+    duration: 3,
+    scale: 0.7,
+    x: 630,
+    y: 30,
+    ease: "Power2.easeOut",
+  },
+  {
+    //FIVB
+    selector: "#logo_2",
+    duration: 3,
+    scale: 0.7,
+    x: 10,
+    y: 220,
+    ease: "Power4.easeOut",
+  },
+  {
+    //WIMBLEDON
+    selector: "#logo_1",
+    duration: 3,
+    scale: 0.7,
+    x: 50,
+    y: 380,
+    ease: "Power2.easeOut",
+  },
+  {
+    //WLB
+    selector: "#logo_4",
+    duration: 3,
+    scale: 0.7,
+    x: 590,
+    y: 500,
+    ease: "Power4.easeOut",
+  },
+  {
+    //NBA
+    selector: "#logo_5",
+    duration: 3,
+    scale: 0.5,
+    x: 40,
+    y: 550,
+    ease: "Power4.easeOut",
+  },
+  {
+    //OLYMPIC
+    selector: "#logo_6",
+    duration: 3,
+    scale: 1.1,
+    x: 650,
+    y: 300,
+    ease: "Power3.easeOut",
+  },
+  {
+    //Jリーグ
+    selector: "#logo_3",
+    duration: 3,
+    scale: 0.6,
+    x: 45,
+    y: -30,
+    ease: "Power4.easeOut",
+  },
+  {
+    //PREMIER LEAGUE
+    selector: "#logo_7",
+    duration: 3,
+    scale: 0.8,
+    x: 600,
+    y: 710,
+    ease: "Power2.easeOut",
+  },
+];
+
+export const GALLERY = [];
 
 // FOOTER SECTION
 export const FOOTER_LINKS = [

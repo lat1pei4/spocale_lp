@@ -48,7 +48,7 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="flexBetween max-container padding-container gap-5 absolute z-30 py-5 inset-x-0 top-0">
+      <div className="flexBetween max-container padding-container gap-5 absolute z-30 py-5 inset-x-0 top-0">
         <Link href="/">
           <Image
             src="images/logo_w.svg"
@@ -75,23 +75,25 @@ const Navbar = () => {
           ))}
         </ul>
 
-        <div className="lg:flexCenter hidden">
-          <Button
-            type="button"
-            title="無料ダウンロード"
-            icon="/images/downloads.png"
-            variant="btn_dark_green"
-          />
-        </div>
+        <Magnetic>
+          <div className="lg:flexCenter hidden">
+            <Button
+              type="button"
+              title="無料ダウンロード"
+              icon="/images/downloads.png"
+              variant="btn_dark_green"
+            />
+          </div>
+        </Magnetic>
 
         <Image
-          src="menu.svg"
+          src="/images/menu.svg"
           alt="menu"
           width={32}
           height={32}
           className="inline-block cursor-pointer lg:hidden"
         />
-      </nav>
+      </div>
       <div ref={button} className={styles.headerButtonContainer}>
         <Rounded
           onClick={() => {
