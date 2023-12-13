@@ -55,7 +55,7 @@ const Navbar = () => {
             alt="logo"
             width={210}
             height={40}
-            style={{ width: 210, height: 40 }}
+            className="h-auto w-[125px] md:w-[150px] lg:w-[200px]"
           />
         </Link>
 
@@ -76,7 +76,7 @@ const Navbar = () => {
         </ul>
 
         <Magnetic>
-          <div className="lg:flexCenter hidden">
+          <div className="xl:flexCenter hidden">
             <Button
               type="button"
               title="無料ダウンロード"
