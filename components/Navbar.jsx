@@ -10,9 +10,9 @@ import Button from "./Commons/Button";
 import Rounded from "./Commons/RoundedButton";
 import Magnetic from "./Commons/Magnetic";
 import styles from "./style.module.scss";
-import { useRef, useState, useEffect, useLayoutEffect } from "react";
+import { useRef, useState, useEffect, useLayoutEffect, use } from "react";
 
-const Navbar = () => {
+function Navbar({ isScreenOverMd }) {
   const [isActive, setIsActive] = useState(false);
   const pathname = usePathname();
   const button = useRef(null);
@@ -45,6 +45,20 @@ const Navbar = () => {
       },
     });
   }, []);
+
+  useEffect(() => {
+    isScreenOverMd
+      ? gsap.to(button.current, {
+          scale: 0,
+          duration: 0.25,
+          ease: "power1.out",
+        })
+      : gsap.to(button.current, {
+          scale: 1,
+          duration: 0.25,
+          ease: "power1.out",
+        });
+  }, [isScreenOverMd]);
 
   return (
     <>
@@ -86,13 +100,13 @@ const Navbar = () => {
           </div>
         </Magnetic>
 
-        <Image
+        {/* <Image
           src="/images/menu.svg"
           alt="menu"
           width={32}
           height={32}
           className="inline-block cursor-pointer lg:hidden"
-        />
+        /> */}
       </div>
       <div ref={button} className={styles.headerButtonContainer}>
         <Rounded
@@ -111,6 +125,6 @@ const Navbar = () => {
       <AnimatePresence mode="wait">{isActive && <Nav />}</AnimatePresence>
     </>
   );
-};
+}
 
 export default Navbar;

@@ -5,6 +5,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
 import { useScroll, useTransform, motion } from "framer-motion";
+import Title from "../Commons/Title";
 
 const slider1 = [
   {
@@ -177,8 +178,10 @@ function Features() {
 
   return (
     <div id="features">
+      <Title backgroundImage="bg-bg-feat">特徴</Title>
       <div className="feat feat--01">
         <div className="feat--title regular-40 text-white absolute top-[20dvh] w-[450px] left-[50dvw]">
+          <span>{`0 ${FEATURES[0].id}`}</span>
           {FEATURES[0].title}
         </div>
         <div className="feat--content regular-24 w-[40dvw] p-10 bg-[#ebebeb] rounded-2xl absolute bottom-[40vh] left-[50dvw] z-[0.5]">
@@ -216,6 +219,7 @@ function Features() {
           className="absolute left-0 top-[15dvh] z-[0.3]"
         />
         <div className="feat--title regular-40 absolute w-[40dvw] top-[15dvh] left-[30dvw] text-white">
+          <span>{`0 ${FEATURES[1].id}`}</span>
           {FEATURES[1].title}
         </div>
         <div className="feat--content regular-24 w-[40dvw] p-10 pr-[8.5rem] bg-[#ebebeb] rounded-2xl absolute bottom-[15vh] right-[20vw] z-[0.5]">
@@ -253,6 +257,7 @@ function Features() {
           className="absolute left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] z-[1.5]"
         />
         <div className="feat--title regular-40 w-[450px] absolute top-[10dvh] left-[15dvw] text-white">
+          <span>{`0 ${FEATURES[2].id}`}</span>
           {FEATURES[2].title}
         </div>
         <div className="feat--content regular-24 w-[45dvw] p-10 bg-[#ebebeb] rounded-2xl rounded-r-none absolute bottom-5 right-0 z-[0.5]">
@@ -262,6 +267,7 @@ function Features() {
       <div className="feat feat--04">
         <div className="h-[50dvh]">
           <div className="feat--title regular-40 absolute w-[550px] top-[15dvh] right-[5dvw] text-white">
+            <span>{`0 ${FEATURES[3].id}`}</span>
             {FEATURES[3].title}
           </div>
           <div className="feat--content regular-24 w-[45dvw] p-10 bg-[#ebebeb] rounded-2xl rounded-l-none absolute top-[10dvh] left-0 z-[0.5]">

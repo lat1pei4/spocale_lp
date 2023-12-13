@@ -14,7 +14,7 @@ import Navbar from "@/components/Navbar";
 import { Autoplay, EffectFade } from "swiper/modules";
 import Image from "next/image";
 
-function Hero() {
+function Hero({ isScreenOverMd }) {
   const firstText = useRef(null);
   const secondText = useRef(null);
   const slider = useRef(null);
@@ -54,21 +54,21 @@ function Hero() {
     }
   };
 
-  const [isPcSwiperActive, setIsPcSwiperActive] = useState(false);
+  // const [isScreenOverMd, setIsScreenOverMd] = useState(false);
 
-  useEffect(() => {
-    const checkWidth = () => {
-      setIsPcSwiperActive(window.innerWidth > 768);
-    };
+  // useEffect(() => {
+  //   const checkWidth = () => {
+  //     setIsScreenOverMd(window.innerWidth > 768);
+  //   };
 
-    checkWidth(); // Check once on mount
+  //   checkWidth(); // Check once on mount
 
-    window.addEventListener("resize", checkWidth); // Add resize listener
+  //   window.addEventListener("resize", checkWidth); // Add resize listener
 
-    return () => {
-      window.removeEventListener("resize", checkWidth); // Clean up
-    };
-  }, [isPcSwiperActive]);
+  //   return () => {
+  //     window.removeEventListener("resize", checkWidth); // Clean up
+  //   };
+  // }, [isScreenOverMd]);
 
   return (
     <>
@@ -78,9 +78,9 @@ function Hero() {
         animate="enter"
         className={"landing"}
       >
-        <Navbar />
+        <Navbar isScreenOverMd={isScreenOverMd} />
         <div className=" h-[100dvh] w-[110dvw] flex flex-col flex-nowrap kv relative md:flex-row">
-          {isPcSwiperActive ? (
+          {isScreenOverMd ? (
             <>
               {/* ここにPC用のSwiperを記述 */}
               <Swiper

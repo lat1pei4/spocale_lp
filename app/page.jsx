@@ -37,6 +37,22 @@ export default function Home() {
     requestAnimationFrame(raf);
   }, []);
 
+  const [isScreenOverMd, setIsScreenOverMd] = useState(false);
+
+  useEffect(() => {
+    const checkWidth = () => {
+      setIsScreenOverMd(window.innerWidth > 768);
+    };
+
+    checkWidth(); // Check once on mount
+
+    window.addEventListener("resize", checkWidth); // Add resize listener
+
+    return () => {
+      window.removeEventListener("resize", checkWidth); // Clean up
+    };
+  }, [isScreenOverMd]);
+
   return (
     <main>
       <AnimatePresence mode="wait">
@@ -44,7 +60,7 @@ export default function Home() {
       </AnimatePresence>
       {
         <>
-          <Hero />
+          <Hero isScreenOverMd={isScreenOverMd} />
           <About />
           <Features />
           <Achievement />
