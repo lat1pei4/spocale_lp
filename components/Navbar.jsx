@@ -12,7 +12,7 @@ import Magnetic from "./Commons/Magnetic";
 import styles from "./style.module.scss";
 import { useRef, useState, useEffect, useLayoutEffect, use } from "react";
 
-function Navbar({ isScreenOverMd }) {
+function Navbar({ isScreenOverMd, deviceType }) {
   const [isActive, setIsActive] = useState(false);
   const pathname = usePathname();
   const button = useRef(null);
@@ -91,12 +91,14 @@ function Navbar({ isScreenOverMd }) {
 
         <Magnetic>
           <div className="xl:flexCenter hidden">
-            <Button
-              type="button"
-              title="無料ダウンロード"
-              icon="/images/downloads.png"
-              variant="btn_dark_green"
-            />
+            <Link href="#footer">
+              <Button
+                type="button"
+                title="無料ダウンロード"
+                icon="/images/downloads.png"
+                variant="btn_dark_green"
+              />
+            </Link>
           </div>
         </Magnetic>
 
@@ -122,7 +124,9 @@ function Navbar({ isScreenOverMd }) {
           ></div>
         </Rounded>
       </div>
-      <AnimatePresence mode="wait">{isActive && <Nav />}</AnimatePresence>
+      <AnimatePresence mode="wait">
+        {isActive && <Nav deviceType={deviceType} />}
+      </AnimatePresence>
     </>
   );
 }

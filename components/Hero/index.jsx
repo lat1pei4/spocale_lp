@@ -14,7 +14,7 @@ import Navbar from "@/components/Navbar";
 import { Autoplay, EffectFade } from "swiper/modules";
 import Image from "next/image";
 
-function Hero({ isScreenOverMd }) {
+function Hero({ isScreenOverMd, deviceType }) {
   const firstText = useRef(null);
   const secondText = useRef(null);
   const slider = useRef(null);
@@ -78,8 +78,14 @@ function Hero({ isScreenOverMd }) {
         animate="enter"
         className={"landing"}
       >
-        <Navbar isScreenOverMd={isScreenOverMd} />
-        <div className=" h-[100dvh] w-[110dvw] flex flex-col flex-nowrap kv relative md:flex-row">
+        <Navbar isScreenOverMd={isScreenOverMd} deviceType={deviceType} />
+        <div
+          className={
+            isScreenOverMd
+              ? "h-[100dvh] w-[110dvw] flex flex-col flex-nowrap kv relative md:flex-row"
+              : "w-[100dvw] flex flex-col flex-nowrap kv relative md:flex-row"
+          }
+        >
           {isScreenOverMd ? (
             <>
               {/* ここにPC用のSwiperを記述 */}
@@ -190,7 +196,7 @@ function Hero({ isScreenOverMd }) {
             alt="catch_copy"
             width={400}
             height={300}
-            className="absolute top-1/2 left-[47%] transform -translate-x-1/2 -translate-y-1/2 z-10 w-full h-auto max-w-xs md:max-w-sm lg:max-w-md"
+            className="absolute top-1/2 left-[47%] transform -translate-x-1/2 -translate-y-1/2 z-[1] w-full h-auto max-w-xs md:max-w-sm lg:max-w-md"
           />
         </div>
       </motion.main>

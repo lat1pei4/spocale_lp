@@ -9,6 +9,7 @@ import Achievement from "@/components/Achievement";
 import Reviews from "@/components/Reviews";
 import Faq from "@/components/Faq";
 import Lenis from "@studio-freight/lenis";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
@@ -53,6 +54,19 @@ export default function Home() {
     };
   }, [isScreenOverMd]);
 
+  const [deviceType, setDeviceType] = useState("Desktop");
+  useEffect(() => {
+    const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+    const isMobile =
+      /android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(
+        userAgent
+      );
+
+    setDeviceType(isMobile ? "Mobile" : "Desktop");
+  }, []);
+
+  console.log(deviceType);
+
   return (
     <main>
       <AnimatePresence mode="wait">
@@ -60,12 +74,13 @@ export default function Home() {
       </AnimatePresence>
       {
         <>
-          <Hero isScreenOverMd={isScreenOverMd} />
+          <Hero isScreenOverMd={isScreenOverMd} deviceType={deviceType} />
           <About />
-          <Features />
+          <Features isScreenOverMd={isScreenOverMd} />
           <Achievement />
           <Reviews />
           <Faq />
+          <Footer deviceType={deviceType} />
         </>
       }
     </main>

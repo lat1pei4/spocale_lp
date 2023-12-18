@@ -7,10 +7,18 @@ import "./faq.scss";
 const AccordionItem = ({ id, title, content, open, onClick }) => (
   <div className="accordionItem">
     <div className={`title q${id}`} onClick={onClick}>
-      <span className="title-text">{title}</span>
+      <span className="title-text regular-18 pl-5  md:regular-20 lg:regular-24 ">
+        {title}
+      </span>
     </div>
-    <div className={open ? "content content-open" : "content"}>
-      <div className={open ? "content-text content-text-open" : "content-text"}>
+    <div className={open ? "content content-open" : "content "}>
+      <div
+        className={
+          open
+            ? "content-text content-text-open regular-18 md:regular-20 lg:regular-24 "
+            : "content-text regular-18 md:regular-20 lg:regular-24 "
+        }
+      >
         {content}
       </div>
     </div>

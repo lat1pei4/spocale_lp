@@ -7,8 +7,8 @@ function Achievement() {
   return (
     <section id="achievements">
       <Title backgroundImage="bg-bg-achieve">実績</Title>
-      <div className="w-full h-[90dvh] bg-blue flex justify-center items-center ">
-        <div className="achievement__container ">
+      <div className="w-full min-h-[90dvh] bg-blue flex justify-center items-center ">
+        <div className="achievement__container flex flex-col mt-[10vmin] mb-[10vmin] sm:grid sm:mt-0 sm:mb-0">
           <div className="item i1 flex justify-center items-center p-2">
             <Image
               src="/images/acheivement_4.svg"

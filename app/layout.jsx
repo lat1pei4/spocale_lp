@@ -30,7 +30,6 @@ export default function RootLayout({ children }) {
     <html lang="jp">
       <body>
         <main className="relative overflow-hidden">{children}</main>
-        <Footer />
       </body>
     </html>
   );
