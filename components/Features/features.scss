@@ -44,7 +44,7 @@
   width: 200px;
   z-index: 0;
   scale: 0;
-  filter: drop-shadow(0px 0px 10px rgba(75, 75, 75, 0.3));
+  filter: drop-shadow(0px 0px 10px rgba(250, 250, 250, 0.5));
 }
 
 .galleryImages {
@@ -54,21 +54,24 @@
   gap: 3vw;
   position: relative;
   z-index: 1;
+
   .gallery {
     display: flex;
     position: relative;
     height: 27%;
     gap: 3vw;
     width: 120dvw;
-
     left: -10dvw;
+
     .project {
       width: 15%;
-      height: 18dvh;
+      min-width: 200px;
+
       display: flex;
       align-items: center;
       justify-content: center;
       border-radius: 10px;
+
       .imageContainer {
         position: relative;
         width: 80%;

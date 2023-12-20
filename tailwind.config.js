@@ -45,6 +45,7 @@ export const theme = {
     },
     screens: {
       xs: "400px",
+      md: "768px",
       "3xl": "1680px",
       "4xl": "2200px",
     },

@@ -2,23 +2,22 @@
 import { FOOTER_CONTACT_INFO, FOOTER_LINKS, SOCIALS } from "@/constants";
 import Image from "next/image";
 import Link from "next/link";
-import Button from "../Commons/Button";
 
 const Footer = ({ deviceType }) => {
   return (
     <section id="footer" className="w-full flex-col">
-      <div className=" relative flex w-full  flex-col justify-between gap-32 overflow-hidden bg-[#284c68] bg-pattern bg-cover bg-center bg-no-repeat px-6 py-12 text-white sm:flex-row sm:gap-12 sm:py-24 lg:px-20 xl:max-h-[598px]">
+      <div className=" relative flex w-full  flex-col justify-between gap-32 overflow-hidden bg-[#284c68] px-6 py-12 text-white sm:flex-row sm:gap-12 sm:py-24 lg:px-20 lg:max-h-[598px]">
         <div className=" flex w-full flex-1 flex-col items-start justify-center gap-4">
           <div className="flex flex-1 items-center justify-end">
             <Image
-              src="/images/feat_01_phone.png"
+              src="/images/feat_01_phone.webp"
               alt="phone"
               width={430}
               height={670}
-              className="top-[10%] right-[5%] xl:absolute"
+              className="top-[10%] right-[5%] lg:absolute"
             />
           </div>
-          <h2 className="bold-40 lg:bold-64 xl:max-w-[320px] pt-10">
+          <h2 className="bold-40 lg:bold-64 lg:max-w-[320px] pt-10">
             <span className="relative  dot">無料</span>で手に入れよう！
           </h2>
           <p className="regular-18 sm:regular-24  text-gray-10">
@@ -47,7 +46,7 @@ const Footer = ({ deviceType }) => {
                 </Link>
                 <Link href="https://apps.apple.com/jp/app/%E3%82%B9%E3%83%9D%E3%82%AB%E3%83%AC/id1337649882">
                   <Image
-                    src="/images/appstore.png"
+                    src="/images/appstore.webp"
                     alt="app store download qr code"
                     width="150"
                     height="50"
@@ -57,7 +56,7 @@ const Footer = ({ deviceType }) => {
             ) : (
               <>
                 <Image
-                  src="/images/an_qrcode.png"
+                  src="/images/an_qrcode.webp"
                   alt="play store download qr code"
                   width="150"
                   height="150"
@@ -75,9 +74,17 @@ const Footer = ({ deviceType }) => {
             <FooterColumn>
               <ul className="regular-14 flex gap-4 text-white">
                 {SOCIALS.links.map((link, index) => (
-                  <Link href={SOCIALS.urls[index]} key={link}>
-                    <Image src={link} alt="logo" width={24} height={24} />
-                  </Link>
+                  <li key={link}>
+                    <Link href={SOCIALS.urls[index]}>
+                      <Image
+                        src={link}
+                        alt="logo"
+                        width={24}
+                        height={24}
+                        style={{ width: "24px", height: "24px" }}
+                      />
+                    </Link>
+                  </li>
                 ))}
               </ul>
             </FooterColumn>
@@ -85,14 +92,14 @@ const Footer = ({ deviceType }) => {
               <FooterColumn key={columns.title}>
                 <ul className="regular-14 flex flex-col sm:flex-row gap-4 text-white">
                   {columns.links.map((link, i) => (
-                    <Link href={columns.hrefs[i]} key={link}>
-                      {link}
-                    </Link>
+                    <li key={link}>
+                      <Link href={columns.hrefs[i]}>{link}</Link>
+                    </li>
                   ))}
                 </ul>
               </FooterColumn>
             ))}
-            <p className="regular-14 w-full text-left text-white">
+            <p className="regular-14 w-full text-left pb-4 text-white">
               COPYRIGHT @ SPOCALE 2023 All rights reserved.
             </p>
           </div>

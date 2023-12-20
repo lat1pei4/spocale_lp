@@ -27,7 +27,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="jp">
+    <html lang="ja">
       <body>
         <main className="relative overflow-hidden">{children}</main>
       </body>

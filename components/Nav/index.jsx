@@ -71,7 +71,7 @@ export default function Index({ deviceType }) {
             ) : (
               <>
                 <Image
-                  src="/images/an_qrcode.png"
+                  src="/images/an_qrcode.webp"
                   alt="play store download qr code"
                   width="150"
                   height="150"

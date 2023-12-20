@@ -35,7 +35,7 @@ export const FEATURES = [
     title: "公式カレンダーやオリジナル着せ替えぞくぞくコラボ実施中！",
     variant: "green",
     description:
-      "スポカレに掲載するカレンダーは、多くのチームや大会に公式カレンダーとして認定されています。MYカレンダーをチーム・リーグ仕様に着せ替えできるオリジナル着せ替えテーマも配信中。徐々に配信チームを拡大しています。",
+      "スポカレに掲載するカレンダーは、多くのチームや大会に公式カレンダーとして認定されています。MYカレンダーをチーム・リーグ仕様に着せ替えできるオリジナル着せ替えテーマも配信中。",
   },
 ];
 
@@ -74,8 +74,8 @@ export const LOGO_ANIMATION = [
     selector: "#logo_8",
     duration: 3,
     scale: 0.7,
-    x: 630,
-    y: 30,
+    left: "3%",
+    top: "23%",
     ease: "Power2.easeOut",
   },
   {
@@ -83,8 +83,8 @@ export const LOGO_ANIMATION = [
     selector: "#logo_2",
     duration: 3,
     scale: 0.7,
-    x: 10,
-    y: 220,
+    left: "33%",
+    top: "30%",
     ease: "Power4.easeOut",
   },
   {
@@ -92,8 +92,8 @@ export const LOGO_ANIMATION = [
     selector: "#logo_1",
     duration: 3,
     scale: 0.7,
-    x: 50,
-    y: 380,
+    left: "35%",
+    top: "10%",
     ease: "Power2.easeOut",
   },
   {
@@ -101,8 +101,8 @@ export const LOGO_ANIMATION = [
     selector: "#logo_4",
     duration: 3,
     scale: 0.7,
-    x: 590,
-    y: 500,
+    left: "8%",
+    top: "53%",
     ease: "Power4.easeOut",
   },
   {
@@ -110,8 +110,8 @@ export const LOGO_ANIMATION = [
     selector: "#logo_5",
     duration: 3,
     scale: 0.5,
-    x: 40,
-    y: 550,
+    left: "33%",
+    top: "57%",
     ease: "Power4.easeOut",
   },
   {
@@ -119,8 +119,8 @@ export const LOGO_ANIMATION = [
     selector: "#logo_6",
     duration: 3,
     scale: 1.1,
-    x: 650,
-    y: 300,
+    left: "4%",
+    top: "74%",
     ease: "Power3.easeOut",
   },
   {
@@ -128,8 +128,8 @@ export const LOGO_ANIMATION = [
     selector: "#logo_3",
     duration: 3,
     scale: 0.6,
-    x: 45,
-    y: -30,
+    left: "36%",
+    top: "42%",
     ease: "Power4.easeOut",
   },
   {
@@ -137,8 +137,8 @@ export const LOGO_ANIMATION = [
     selector: "#logo_7",
     duration: 3,
     scale: 0.8,
-    x: 600,
-    y: 710,
+    left: "2%",
+    top: "9%",
     ease: "Power2.easeOut",
   },
 ];
@@ -252,6 +252,10 @@ export const FOOTER_LINKS = [
 
 export const SOCIALS = {
   title: "Socials",
-  links: ["/images/x_logo.svg", "/images/facebook.svg"],
-  urls: ["https://twitter.com/spocale_jp", "https://www.facebook.com/spocale/"],
+  links: ["/images/x_logo.svg", "/images/facebook.svg", "/images/note.svg"],
+  urls: [
+    "https://twitter.com/spocale_jp",
+    "https://www.facebook.com/spocale/",
+    "https://note.com/spocale/",
+  ],
 };

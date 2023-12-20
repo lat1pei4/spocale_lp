@@ -17,9 +17,12 @@ function Navbar({ isScreenOverMd, deviceType }) {
   const pathname = usePathname();
   const button = useRef(null);
 
-  useEffect(() => {
-    if (isActive) setIsActive(false);
-  }, [pathname]);
+  useEffect(
+    (isActive) => {
+      isActive && setIsActive(false);
+    },
+    [pathname, isActive]
+  );
 
   useLayoutEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -95,7 +98,7 @@ function Navbar({ isScreenOverMd, deviceType }) {
               <Button
                 type="button"
                 title="無料ダウンロード"
-                icon="/images/downloads.png"
+                icon="/images/downloads.webp"
                 variant="btn_dark_green"
               />
             </Link>
@@ -115,7 +118,9 @@ function Navbar({ isScreenOverMd, deviceType }) {
           onClick={() => {
             setIsActive(!isActive);
           }}
-          className={`${styles.button} z-10`}
+          className={`${
+            deviceType === "Mobile" ? styles.buttonSmall : styles.button
+          } z-10`}
         >
           <div
             className={`${styles.burger} ${

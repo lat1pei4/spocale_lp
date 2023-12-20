@@ -24,7 +24,10 @@ function Hero({ isScreenOverMd, deviceType }) {
   useLayoutEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
+    // Ensure the ref is current before using it
     if (slider.current) {
+      let direction; // Define direction variable
+
       gsap.to(slider.current, {
         scrollTrigger: {
           trigger: document.documentElement,
@@ -36,6 +39,11 @@ function Hero({ isScreenOverMd, deviceType }) {
         x: "-500px",
       });
     }
+
+    // Define the animate function
+    const animate = () => {
+      // Animation logic here
+    };
 
     requestAnimationFrame(animate);
   }, []);
@@ -197,6 +205,7 @@ function Hero({ isScreenOverMd, deviceType }) {
             width={400}
             height={300}
             className="absolute top-1/2 left-[47%] transform -translate-x-1/2 -translate-y-1/2 z-[1] w-full h-auto max-w-xs md:max-w-sm lg:max-w-md"
+            priority={true}
           />
         </div>
       </motion.main>

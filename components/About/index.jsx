@@ -27,15 +27,15 @@ const About = () => {
           </p>
         </div>
         <Image
-          src="/images/phone.png"
+          src="/images/phone.webp"
           alt="phone"
           width={1000}
-          height={100}
+          height={1000}
           className="hidden right-[-40%] bottom-[-10%] sm:absolute sm:block sm:right-[-30%] xl:right-[-15%] 2xl:right-[0%]"
         />
 
         <Image
-          src="/images/about_sp.png"
+          src="/images/about_sp.webp"
           alt="phone"
           width={750}
           height={100}

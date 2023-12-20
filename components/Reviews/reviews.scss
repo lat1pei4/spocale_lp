@@ -35,12 +35,16 @@
     padding-top: 30px;
     padding-left: 35px;
     text-align: left;
+    font-size: 1.5rem;
+    color: #2196f3;
+    font-weight: 700;
     top: -59px;
     left: 0px;
     width: 150px;
     height: 60px;
     background: #fff;
     border-radius: 35px 0px 0px 0px;
+    letter-spacing: 3px;
   }
   &::after {
     content: url("../../public/images/tabflag.svg");

@@ -65,8 +65,6 @@ export default function Home() {
     setDeviceType(isMobile ? "Mobile" : "Desktop");
   }, []);
 
-  console.log(deviceType);
-
   return (
     <main>
       <AnimatePresence mode="wait">
@@ -76,7 +74,7 @@ export default function Home() {
         <>
           <Hero isScreenOverMd={isScreenOverMd} deviceType={deviceType} />
           <About />
-          <Features isScreenOverMd={isScreenOverMd} />
+          <Features />
           <Achievement />
           <Reviews />
           <Faq />
