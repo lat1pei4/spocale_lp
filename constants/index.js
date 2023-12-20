@@ -1,4 +1,4 @@
-// NAVIGATION
+// NAVIGATION and Hamburger Menu
 export const NAV_LINKS = [
   { href: "#aboutUs", key: "about us", label: "ABOUT US" },
   { href: "#features", key: "features", label: "FEATURES " },
@@ -6,14 +6,6 @@ export const NAV_LINKS = [
   { href: "#reviews", key: "reviews", label: "REVIEWS" },
   { href: "#faq", key: "faqs", label: "FAQs" },
 ];
-
-// CAMP SECTION
-// export const PEOPLE_URL = [
-//   "/person-1.png",
-//   "/person-2.png",
-//   "/person-3.png",
-//   "/person-4.png",
-// ];
 
 // FEATURES SECTION
 export const FEATURES = [
@@ -25,24 +17,134 @@ export const FEATURES = [
       "「コレクション登録」を行うことで、好きなチームや気になる大会の試合観戦情報をMYカレンダーにまとめることができます。",
   },
   {
+    id: 2,
     title: "試合情報やチケット発売情報をプッシュ通知でリマインド！",
     variant: "green",
     description:
       "MYカレンダーに登録したカレンダーや試合は、試合開始前やチケット発売日にプッシュ通知でリマインドされます。プッシュ通知のタイミングをカスタマイズすることも可能です。",
   },
   {
+    id: 3,
     title: "気になる試合は「みたい登録」でシェア！",
     variant: "orange",
     description:
       "気になる試合のメガホンアイコンをタップすると「みたい登録」が完了し友だちに試合情報をシェアすることができます。友だちと一緒に観戦するきっかけを作りましょう。",
   },
   {
+    id: 4,
     title: "公式カレンダーやオリジナル着せ替えぞくぞくコラボ実施中！",
     variant: "green",
     description:
-      "スポカレに掲載するカレンダーは、多くのチームや大会に公式カレンダーとして認定されています。MYカレンダーをチーム・リーグ仕様に着せ替えできるオリジナル着せ替えテーマも配信中。徐々に配信チームを拡大しています。",
+      "スポカレに掲載するカレンダーは、多くのチームや大会に公式カレンダーとして認定されています。MYカレンダーをチーム・リーグ仕様に着せ替えできるオリジナル着せ替えテーマも配信中。",
   },
 ];
+
+// Features Section - Icons
+export const ICONS = [
+  {
+    src: "/images/feat_logo_01.svg",
+  },
+  {
+    src: "/images/feat_logo_02.svg",
+  },
+  {
+    src: "/images/feat_logo_03.svg",
+  },
+  {
+    src: "/images/feat_logo_04.svg",
+  },
+  {
+    src: "/images/feat_logo_05.svg",
+  },
+  {
+    src: "/images/feat_logo_06.svg",
+  },
+  {
+    src: "/images/feat_logo_07.svg",
+  },
+  {
+    src: "/images/feat_logo_08.svg",
+  },
+];
+
+// Features Section - logos anmation settings
+export const LOGO_ANIMATION = [
+  {
+    //UEFA
+    selector: "#logo_8",
+    duration: 3,
+    scale: 0.7,
+    left: "3%",
+    top: "23%",
+    ease: "Power2.easeOut",
+  },
+  {
+    //FIVB
+    selector: "#logo_2",
+    duration: 3,
+    scale: 0.7,
+    left: "33%",
+    top: "30%",
+    ease: "Power4.easeOut",
+  },
+  {
+    //WIMBLEDON
+    selector: "#logo_1",
+    duration: 3,
+    scale: 0.7,
+    left: "35%",
+    top: "10%",
+    ease: "Power2.easeOut",
+  },
+  {
+    //WLB
+    selector: "#logo_4",
+    duration: 3,
+    scale: 0.7,
+    left: "8%",
+    top: "53%",
+    ease: "Power4.easeOut",
+  },
+  {
+    //NBA
+    selector: "#logo_5",
+    duration: 3,
+    scale: 0.5,
+    left: "33%",
+    top: "57%",
+    ease: "Power4.easeOut",
+  },
+  {
+    //OLYMPIC
+    selector: "#logo_6",
+    duration: 3,
+    scale: 1.1,
+    left: "4%",
+    top: "74%",
+    ease: "Power3.easeOut",
+  },
+  {
+    //Jリーグ
+    selector: "#logo_3",
+    duration: 3,
+    scale: 0.6,
+    left: "36%",
+    top: "42%",
+    ease: "Power4.easeOut",
+  },
+  {
+    //PREMIER LEAGUE
+    selector: "#logo_7",
+    duration: 3,
+    scale: 0.8,
+    left: "2%",
+    top: "9%",
+    ease: "Power2.easeOut",
+  },
+];
+
+// Features Section - Gallery
+export const GALLERY = [];
 
 // FAQ SECTION
 export const FAQ = [
@@ -73,6 +175,7 @@ export const FAQ = [
   },
 ];
 
+// USER REVIEW SECTION
 export const REVIEWS = [
   {
     rate: 4,
@@ -133,110 +236,6 @@ export const REVIEWS = [
   // Add more testimonials as needed
 ];
 
-export const ICONS = [
-  {
-    src: "/images/feat_logo_01.svg",
-  },
-  {
-    src: "/images/feat_logo_02.svg",
-  },
-  {
-    src: "/images/feat_logo_03.svg",
-  },
-  {
-    src: "/images/feat_logo_04.svg",
-  },
-  {
-    src: "/images/feat_logo_05.svg",
-  },
-  {
-    src: "/images/feat_logo_06.svg",
-  },
-  {
-    src: "/images/feat_logo_07.svg",
-  },
-  {
-    src: "/images/feat_logo_08.svg",
-  },
-];
-
-export const LOGO_ANIMATION = [
-  {
-    //UEFA
-    selector: "#logo_8",
-    duration: 3,
-    scale: 0.7,
-    x: 630,
-    y: 30,
-    ease: "Power2.easeOut",
-  },
-  {
-    //FIVB
-    selector: "#logo_2",
-    duration: 3,
-    scale: 0.7,
-    x: 10,
-    y: 220,
-    ease: "Power4.easeOut",
-  },
-  {
-    //WIMBLEDON
-    selector: "#logo_1",
-    duration: 3,
-    scale: 0.7,
-    x: 50,
-    y: 380,
-    ease: "Power2.easeOut",
-  },
-  {
-    //WLB
-    selector: "#logo_4",
-    duration: 3,
-    scale: 0.7,
-    x: 590,
-    y: 500,
-    ease: "Power4.easeOut",
-  },
-  {
-    //NBA
-    selector: "#logo_5",
-    duration: 3,
-    scale: 0.5,
-    x: 40,
-    y: 550,
-    ease: "Power4.easeOut",
-  },
-  {
-    //OLYMPIC
-    selector: "#logo_6",
-    duration: 3,
-    scale: 1.1,
-    x: 650,
-    y: 300,
-    ease: "Power3.easeOut",
-  },
-  {
-    //Jリーグ
-    selector: "#logo_3",
-    duration: 3,
-    scale: 0.6,
-    x: 45,
-    y: -30,
-    ease: "Power4.easeOut",
-  },
-  {
-    //PREMIER LEAGUE
-    selector: "#logo_7",
-    duration: 3,
-    scale: 0.8,
-    x: 600,
-    y: 710,
-    ease: "Power2.easeOut",
-  },
-];
-
-export const GALLERY = [];
-
 // FOOTER SECTION
 export const FOOTER_LINKS = [
   {
@@ -253,6 +252,10 @@ export const FOOTER_LINKS = [
 
 export const SOCIALS = {
   title: "Socials",
-  links: ["/images/twitter.svg", "/images/facebook.svg"],
-  urls: ["https://twitter.com/spocale_jp", "https://www.facebook.com/spocale/"],
+  links: ["/images/x_logo.svg", "/images/facebook.svg", "/images/note.svg"],
+  urls: [
+    "https://twitter.com/spocale_jp",
+    "https://www.facebook.com/spocale/",
+    "https://note.com/spocale/",
+  ],
 };

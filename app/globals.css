@@ -112,6 +112,10 @@ body {
     @apply text-[32px] font-[700] leading-[120%];
   }
 
+  .bold-24 {
+    @apply text-[24px] font-[700] leading-[120%];
+  }
+
   .bold-20 {
     @apply text-[20px] font-[700];
   }
@@ -154,4 +158,22 @@ body {
 .hide-scrollbar {
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
+}
+
+.dot::before,
+.dot::after {
+  @apply block absolute bg-white rounded-full;
+  content: "";
+  width: 12px; /* size of the dot */
+  height: 12px; /* size of the dot */
+  top: -10%; /* align vertically */
+  transform: translateY(50%); /* align vertically */
+}
+
+.dot::before {
+  left: 23%; /* distance from the text */
+}
+
+.dot::after {
+  right: 23%; /* distance from the text */
 }

@@ -7,10 +7,18 @@ import "./faq.scss";
 const AccordionItem = ({ id, title, content, open, onClick }) => (
   <div className="accordionItem">
     <div className={`title q${id}`} onClick={onClick}>
-      <span className="title-text">{title}</span>
+      <span className="title-text regular-18 pl-5  md:regular-20 lg:regular-24 ">
+        {title}
+      </span>
     </div>
-    <div className={open ? "content content-open" : "content"}>
-      <div className={open ? "content-text content-text-open" : "content-text"}>
+    <div className={open ? "content content-open" : "content "}>
+      <div
+        className={
+          open
+            ? "content-text content-text-open regular-18 md:regular-20 lg:regular-24 "
+            : "content-text regular-18 md:regular-20 lg:regular-24 "
+        }
+      >
         {content}
       </div>
     </div>
@@ -48,23 +56,13 @@ const Accordion = ({ data }) => {
 };
 
 const Faq = () => {
-  const container = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: container,
-    offset: ["start end", "end start"],
-  });
-
-  const x1 = useTransform(scrollYProgress, [0, 1], [0, 150]);
-  const x2 = useTransform(scrollYProgress, [0, 1], [0, -150]);
-  const height = useTransform(scrollYProgress, [0, 0.9], [50, 0]);
   return (
-    <section ref={container} id="faq">
-      <Title backgroundImage="bg-bg-faqs">よくある質問</Title>
-      <Accordion data={FAQ} />
-      <motion.div style={{ height }} className="circleContainer">
-        <div className="circle"></div>
-      </motion.div>
-    </section>
+    <>
+      <section id="faq">
+        <Title backgroundImage="bg-bg-faqs">よくある質問</Title>
+        <Accordion data={FAQ} />
+      </section>
+    </>
   );
 };
 

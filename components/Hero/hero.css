@@ -1,7 +1,11 @@
 .swiper_container_left {
-  position: relative;
-  height: 100%;
   width: 65%;
+  height: 100%;
+}
+
+.swiper_container_top {
+  position: relative;
+  width: 100%;
 }
 
 .kv::after {
@@ -27,23 +31,63 @@
 }
 
 .left_01 {
-  background: url("../../public/images/Hero/pc_1800x1200/l_1.png") no-repeat right center;
+  background: url("../../public/images/Hero/pc/l_1.webp") no-repeat right center;
   background-size: cover;
 }
 
 .left_02 {
-  background: url("../../public/images/Hero/pc_1800x1200/l_2.png") no-repeat right center;
+  background: url("../../public/images/Hero/pc/l_2.webp") no-repeat right center;
+  background-size: cover;
+}
+
+.left_03 {
+  background: url("../../public/images/Hero/pc/l_3.webp") no-repeat right center;
+  background-size: cover;
+}
+
+.left_04 {
+  background: url("../../public/images/Hero/pc/l_4.webp") no-repeat right center;
   background-size: cover;
 }
 
 .right_01 {
-  background: url("../../public/images/Hero/pc_1800x1200/r_1.png") no-repeat left center;
+  background: url("../../public/images/Hero/pc/r_1.webp") no-repeat left center;
   background-size: cover;
 }
 
 .right_02 {
-  background: url("../../public/images/Hero/pc_1800x1200/r_2.png") no-repeat left center;
+  background: url("../../public/images/Hero/pc/r_2.webp") no-repeat left center;
   background-size: cover;
+}
+
+.up_01 {
+  background: url("../../public/images/Hero/sp/u_1.webp") no-repeat center;
+  background-size: auto;
+}
+
+.up_02 {
+  background: url("../../public/images/Hero/sp/u_2.webp") no-repeat center;
+  background-size: auto;
+}
+
+.up_01 {
+  background: url("../../public/images/Hero/sp/u_3.webp") no-repeat center;
+  background-size: auto;
+}
+
+.up_02 {
+  background: url("../../public/images/Hero/sp/u_4.webp") no-repeat center;
+  background-size: auto;
+}
+
+.down_01 {
+  background: url("../../public/images/Hero/sp/d_1.webp") no-repeat center;
+  background-size: auto;
+}
+
+.down_02 {
+  background: url("../../public/images/Hero/sp/d_2.webp") no-repeat center;
+  background-size: auto;
 }
 
 .swiper_container_right {
@@ -51,6 +95,11 @@
   right: 5%;
   height: 100%;
   width: 65%;
+}
+
+.swiper_container_down {
+  position: relative;
+  width: 100%;
 }
 
 .swiper-slide {

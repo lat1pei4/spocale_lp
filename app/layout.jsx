@@ -1,6 +1,4 @@
 import "./globals.css";
-import { Metadata } from "next";
-import Footer from "@/components/Footer";
 
 export const metadata = {
   title: "スポカレ｜スポーツ日程更新中",
@@ -27,10 +25,9 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="jp">
+    <html lang="ja">
       <body>
         <main className="relative overflow-hidden">{children}</main>
-        <Footer />
       </body>
     </html>
   );

@@ -11,21 +11,14 @@ const About = () => {
         blue={true}
         className="flex justify-start"
       >
-        スポカレについて
+        スポカレとは
       </Title>
-      <div className="flex flex-1 lg:min-h-[900px] overflow-hidden">
-        <Image
-          src="/images/phone.png"
-          alt="phone"
-          width={1000}
-          height={100}
-          className="absolute right-0 bottom-0 z-[0]"
-        />
-        <div className="flex flex-col justify-center p-20 w-[50vw]">
-          <h2 className="text-3xl font-bold">
+      <div className="flex flex-col overflow-hidden sm:flex-1">
+        <div className="flex flex-col justify-center p-[10vmin] min-w-[375px] sm:w-[50vw] ">
+          <h2 className="bold-24 sm:text-2xl lg:text-3xl ">
             国内外スポーツの観戦情報を集約！
           </h2>
-          <p className="mt-5 z-10 text-2xl">
+          <p className="mt-5 regular-18 sm:text-xl lg:text-2xl">
             <span>掲載競技数は約100競技。</span>
             <br />
             <span>
@@ -33,6 +26,21 @@ const About = () => {
             </span>
           </p>
         </div>
+        <Image
+          src="/images/phone.webp"
+          alt="phone"
+          width={1000}
+          height={1000}
+          className="hidden right-[-40%] bottom-[-10%] sm:absolute sm:block sm:right-[-30%] xl:right-[-15%] 2xl:right-[0%]"
+        />
+
+        <Image
+          src="/images/about_sp.webp"
+          alt="phone"
+          width={750}
+          height={100}
+          className="sm:hidden"
+        />
       </div>
     </section>
   );

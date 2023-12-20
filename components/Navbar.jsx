@@ -10,16 +10,19 @@ import Button from "./Commons/Button";
 import Rounded from "./Commons/RoundedButton";
 import Magnetic from "./Commons/Magnetic";
 import styles from "./style.module.scss";
-import { useRef, useState, useEffect, useLayoutEffect } from "react";
+import { useRef, useState, useEffect, useLayoutEffect, use } from "react";
 
-const Navbar = () => {
+function Navbar({ isScreenOverMd, deviceType }) {
   const [isActive, setIsActive] = useState(false);
   const pathname = usePathname();
   const button = useRef(null);
 
-  useEffect(() => {
-    if (isActive) setIsActive(false);
-  }, [pathname]);
+  useEffect(
+    (isActive) => {
+      isActive && setIsActive(false);
+    },
+    [pathname, isActive]
+  );
 
   useLayoutEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -46,16 +49,30 @@ const Navbar = () => {
     });
   }, []);
 
+  useEffect(() => {
+    isScreenOverMd
+      ? gsap.to(button.current, {
+          scale: 0,
+          duration: 0.25,
+          ease: "power1.out",
+        })
+      : gsap.to(button.current, {
+          scale: 1,
+          duration: 0.25,
+          ease: "power1.out",
+        });
+  }, [isScreenOverMd]);
+
   return (
     <>
-      <div className="flexBetween max-container padding-container gap-5 absolute z-30 py-5 inset-x-0 top-0">
+      <div className="flexBetween max-container padding-container gap-5 absolute z-[2] py-5 inset-x-0 top-0">
         <Link href="/">
           <Image
             src="images/logo_w.svg"
             alt="logo"
             width={210}
             height={40}
-            style={{ width: 210, height: 40 }}
+            className="h-auto w-[125px] md:w-[150px] lg:w-[200px]"
           />
         </Link>
 
@@ -76,30 +93,34 @@ const Navbar = () => {
         </ul>
 
         <Magnetic>
-          <div className="lg:flexCenter hidden">
-            <Button
-              type="button"
-              title="無料ダウンロード"
-              icon="/images/downloads.png"
-              variant="btn_dark_green"
-            />
+          <div className="xl:flexCenter hidden">
+            <Link href="#footer">
+              <Button
+                type="button"
+                title="無料ダウンロード"
+                icon="/images/downloads.webp"
+                variant="btn_dark_green"
+              />
+            </Link>
           </div>
         </Magnetic>
 
-        <Image
+        {/* <Image
           src="/images/menu.svg"
           alt="menu"
           width={32}
           height={32}
           className="inline-block cursor-pointer lg:hidden"
-        />
+        /> */}
       </div>
       <div ref={button} className={styles.headerButtonContainer}>
         <Rounded
           onClick={() => {
             setIsActive(!isActive);
           }}
-          className={`${styles.button} z-10`}
+          className={`${
+            deviceType === "Mobile" ? styles.buttonSmall : styles.button
+          } z-10`}
         >
           <div
             className={`${styles.burger} ${
@@ -108,9 +129,11 @@ const Navbar = () => {
           ></div>
         </Rounded>
       </div>
-      <AnimatePresence mode="wait">{isActive && <Nav />}</AnimatePresence>
+      <AnimatePresence mode="wait">
+        {isActive && <Nav deviceType={deviceType} />}
+      </AnimatePresence>
     </>
   );
-};
+}
 
 export default Navbar;

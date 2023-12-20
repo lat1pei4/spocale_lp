@@ -7,9 +7,9 @@ function Achievement() {
   return (
     <section id="achievements">
       <Title backgroundImage="bg-bg-achieve">実績</Title>
-      <div className="w-full h-[90dvh] bg-blue flex justify-center items-center ">
-        <div className="achievement__container ">
-          <div className="item i1 flex justify-center items-center p-2">
+      <div className="w-full min-h-[90dvh] bg-blue flex justify-center items-center ">
+        <div className="achievement__container flex flex-col mt-[10vmin] mb-[10vmin] sm:grid sm:mt-0 sm:mb-0">
+          <div className="item i1 flex justify-center items-center p-10 sm:p-2">
             <Image
               src="/images/acheivement_4.svg"
               width={350}
@@ -17,7 +17,7 @@ function Achievement() {
               alt="acheivement"
             />
           </div>
-          <div className="item i2 flex justify-center items-center p-2">
+          <div className="item i2 flex justify-center items-center p-10 sm:p-2">
             <Image
               src="/images/acheivement_5.svg"
               alt="acheivement"
@@ -25,7 +25,7 @@ function Achievement() {
               height={500}
             />
           </div>
-          <div className="item i3 flex justify-center items-center p-2">
+          <div className="item i3 flex justify-center items-center p-10 sm:p-2">
             <Image
               src="/images/acheivement_1.svg"
               alt="acheivement"
@@ -33,7 +33,7 @@ function Achievement() {
               height={500}
             />
           </div>
-          <div className="item i4 flex justify-center items-center p-2">
+          <div className="item i4 flex justify-center items-center p-10 sm:p-2">
             <Image
               src="/images/acheivement_3.svg"
               alt="acheivement"
@@ -41,7 +41,7 @@ function Achievement() {
               height={500}
             />
           </div>
-          <div className="item i5 flex justify-center items-center p-2">
+          <div className="item i5 flex justify-center items-center p-10 sm:p-2">
             <Image
               src="/images/acheivement_2.svg"
               alt="acheivement"

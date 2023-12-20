@@ -32,11 +32,6 @@ export const theme = {
       },
     },
     backgroundImage: {
-      "bg-img-1": "url('/img-1.png')",
-      "bg-img-2": "url('/img-2.png')",
-      "feature-bg": "url('/feature-bg.png')",
-      pattern: "url('/pattern.png')",
-      "pattern-2": "url('/pattern-bg.png')",
       "bg-about": "url('/images/title_about.svg')",
       "bg-feat": "url('/images/title_feat.svg')",
       "bg-achieve": "url('/images/title_achieve.svg')",
@@ -45,6 +40,7 @@ export const theme = {
     },
     screens: {
       xs: "400px",
+      md: "768px",
       "3xl": "1680px",
       "4xl": "2200px",
     },

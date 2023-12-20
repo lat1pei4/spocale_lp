@@ -4,7 +4,7 @@ import styles from "./style.module.scss";
 import gsap from "gsap";
 import Magnetic from "../Magnetic";
 
-export default function index({
+export default function Index({
   children,
   backgroundColor = "#455CE9",
   ...attributes

@@ -5,21 +5,16 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "swiper/css/effect-fade";
 import "./hero.scss";
-import { useRef, useLayoutEffect } from "react";
+import { useState, useEffect, useRef, useLayoutEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import { slideUp } from "./animation";
 import { motion } from "framer-motion";
-
 import Navbar from "@/components/Navbar";
-
-// import required modules
 import { Autoplay, EffectFade } from "swiper/modules";
 import Image from "next/image";
 
-// ... (import statements)
-
-function Hero() {
+function Hero({ isScreenOverMd, deviceType }) {
   const firstText = useRef(null);
   const secondText = useRef(null);
   const slider = useRef(null);
@@ -29,7 +24,10 @@ function Hero() {
   useLayoutEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
+    // Ensure the ref is current before using it
     if (slider.current) {
+      let direction; // Define direction variable
+
       gsap.to(slider.current, {
         scrollTrigger: {
           trigger: document.documentElement,
@@ -41,6 +39,11 @@ function Hero() {
         x: "-500px",
       });
     }
+
+    // Define the animate function
+    const animate = () => {
+      // Animation logic here
+    };
 
     requestAnimationFrame(animate);
   }, []);
@@ -59,6 +62,22 @@ function Hero() {
     }
   };
 
+  // const [isScreenOverMd, setIsScreenOverMd] = useState(false);
+
+  // useEffect(() => {
+  //   const checkWidth = () => {
+  //     setIsScreenOverMd(window.innerWidth > 768);
+  //   };
+
+  //   checkWidth(); // Check once on mount
+
+  //   window.addEventListener("resize", checkWidth); // Add resize listener
+
+  //   return () => {
+  //     window.removeEventListener("resize", checkWidth); // Clean up
+  //   };
+  // }, [isScreenOverMd]);
+
   return (
     <>
       <motion.main
@@ -67,62 +86,138 @@ function Hero() {
         animate="enter"
         className={"landing"}
       >
-        <Navbar />
-        <div className=" h-[100dvh] w-[110dvw] flex flex-nowrap kv relative">
-          <Swiper
-            spaceBetween={3000}
-            centeredSlides={true}
-            effect={"fade"}
-            autoplay={{
-              delay: 2000,
-              disableOnInteraction: false,
-            }}
-            pagination={{
-              clickable: false,
-            }}
-            navigation={false}
-            modules={[Autoplay, EffectFade]}
-            className="swiper_container_left"
-            allowTouchMove={false}
-            speed={5000}
-          >
-            <SwiperSlide>
-              <div className="bg left_01"></div>
-            </SwiperSlide>
-            <SwiperSlide>
-              <div className="bg left_02"></div>
-            </SwiperSlide>
-          </Swiper>
-          <Swiper
-            spaceBetween={3000}
-            centeredSlides={true}
-            effect={"fade"}
-            autoplay={{
-              delay: 3000,
-              disableOnInteraction: false,
-            }}
-            pagination={{
-              clickable: false,
-            }}
-            navigation={false}
-            modules={[Autoplay, EffectFade]}
-            className="swiper_container_right"
-            allowTouchMove={false}
-            speed={5000}
-          >
-            <SwiperSlide>
-              <div className="bg right_01"></div>
-            </SwiperSlide>
-            <SwiperSlide>
-              <div className="bg right_02"></div>
-            </SwiperSlide>
-          </Swiper>
+        <Navbar isScreenOverMd={isScreenOverMd} deviceType={deviceType} />
+        <div
+          className={
+            isScreenOverMd
+              ? "h-[100dvh] w-[110dvw] flex flex-col flex-nowrap kv relative md:flex-row"
+              : "w-[100dvw] flex flex-col flex-nowrap kv relative md:flex-row"
+          }
+        >
+          {isScreenOverMd ? (
+            <>
+              {/* ここにPC用のSwiperを記述 */}
+              <Swiper
+                spaceBetween={3000}
+                centeredSlides={true}
+                effect={"fade"}
+                autoplay={{
+                  delay: 2000,
+                  disableOnInteraction: false,
+                }}
+                pagination={{
+                  clickable: false,
+                }}
+                navigation={false}
+                modules={[Autoplay, EffectFade]}
+                className="swiper_container_left"
+                allowTouchMove={false}
+                speed={5000}
+              >
+                <SwiperSlide>
+                  <div className="bg left_01"></div>
+                </SwiperSlide>
+                <SwiperSlide>
+                  <div className="bg left_02"></div>
+                </SwiperSlide>
+                <SwiperSlide>
+                  <div className="bg left_03"></div>
+                </SwiperSlide>
+                <SwiperSlide>
+                  <div className="bg left_04"></div>
+                </SwiperSlide>
+              </Swiper>
+              <Swiper
+                spaceBetween={3000}
+                centeredSlides={true}
+                effect={"fade"}
+                autoplay={{
+                  delay: 3000,
+                  disableOnInteraction: false,
+                }}
+                pagination={{
+                  clickable: false,
+                }}
+                navigation={false}
+                modules={[Autoplay, EffectFade]}
+                className="swiper_container_right"
+                allowTouchMove={false}
+                speed={5000}
+              >
+                <SwiperSlide>
+                  <div className="bg right_01"></div>
+                </SwiperSlide>
+                <SwiperSlide>
+                  <div className="bg right_02"></div>
+                </SwiperSlide>
+              </Swiper>
+            </>
+          ) : (
+            <>
+              {/* // ここにSP用のSwiperを記述 */}
+              <Swiper
+                spaceBetween={3000}
+                centeredSlides={true}
+                effect={"fade"}
+                autoplay={{
+                  delay: 2000,
+                  disableOnInteraction: false,
+                }}
+                pagination={{
+                  clickable: false,
+                }}
+                navigation={false}
+                modules={[Autoplay, EffectFade]}
+                className="swiper_container_top"
+                allowTouchMove={false}
+                speed={5000}
+              >
+                <SwiperSlide>
+                  <div className="bg up_01"></div>
+                </SwiperSlide>
+                <SwiperSlide>
+                  <div className="bg up_02"></div>
+                </SwiperSlide>
+              </Swiper>
+              <Swiper
+                spaceBetween={3000}
+                centeredSlides={true}
+                effect={"fade"}
+                autoplay={{
+                  delay: 3000,
+                  disableOnInteraction: false,
+                }}
+                pagination={{
+                  clickable: false,
+                }}
+                navigation={false}
+                modules={[Autoplay, EffectFade]}
+                className="swiper_container_down"
+                allowTouchMove={false}
+                speed={5000}
+              >
+                <SwiperSlide>
+                  <div className="bg down_01"></div>
+                </SwiperSlide>
+                <SwiperSlide>
+                  <div className="bg down_02"></div>
+                </SwiperSlide>
+                <SwiperSlide>
+                  <div className="bg down_03"></div>
+                </SwiperSlide>
+                <SwiperSlide>
+                  <div className="bg down_04"></div>
+                </SwiperSlide>
+              </Swiper>
+            </>
+          )}
           <Image
             src="/images/catch_copy.svg"
             alt="catch_copy"
             width={400}
             height={300}
-            className="absolute top-1/2 left-[47%] transform -translate-x-1/2 -translate-y-1/2 z-10"
+            className="absolute top-1/2 left-[47%] transform -translate-x-1/2 -translate-y-1/2 z-[1] w-full h-auto max-w-xs md:max-w-sm lg:max-w-md"
+            priority={true}
           />
         </div>
       </motion.main>

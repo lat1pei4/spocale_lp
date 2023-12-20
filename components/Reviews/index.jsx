@@ -37,7 +37,7 @@ function index() {
             <SwiperSlide id="swiper-slide" key={index}>
               <div className="testimonialBox">
                 <Image
-                  src="/images/quote.png"
+                  src="/images/quote.webp"
                   className="quote"
                   alt=""
                   width="50"
