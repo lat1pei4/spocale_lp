@@ -4,12 +4,19 @@ import { useEffect, useState } from "react";
 import Preloader from "../components/Preloader";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
-import Features from "@/components/Features";
+// import Features from "@/components/Features";
 import Achievement from "@/components/Achievement";
 import Reviews from "@/components/Reviews";
 import Faq from "@/components/Faq";
 import Lenis from "@studio-freight/lenis";
 import Footer from "@/components/Footer";
+import Demo_paris from "@/components/demo_paris";
+
+import dynamic from "next/dynamic";
+
+const DynamicFeatures = dynamic(() => import("@/components/Features"), {
+  ssr: false,
+});
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
@@ -74,7 +81,8 @@ export default function Home() {
         <>
           <Hero isScreenOverMd={isScreenOverMd} deviceType={deviceType} />
           <About />
-          <Features />
+          {/* <Demo_paris /> */}
+          <DynamicFeatures />
           <Achievement />
           <Reviews />
           <Faq />

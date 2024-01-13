@@ -28,7 +28,7 @@ const Footer = ({ deviceType }) => {
             alt="logo"
             width={210}
             height={40}
-            className="h-auto w-[125px] md:w-[150px] lg:w-[200px]"
+            className="h-auto w-[200px] md:w-[250px] lg:w-[300px]"
           />
           <div className="flex w-full gap-3 whitespace-nowrap xl:flex-row">
             {deviceType === "Mobile" ? (
@@ -99,7 +99,7 @@ const Footer = ({ deviceType }) => {
                 </ul>
               </FooterColumn>
             ))}
-            <p className="regular-14 w-full text-left pb-4 text-white">
+            <p className="regular-14 w-full text-left pb-8 text-white">
               COPYRIGHT @ SPOCALE 2023 All rights reserved.
             </p>
           </div>

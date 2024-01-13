@@ -12,7 +12,7 @@ import Magnetic from "./Commons/Magnetic";
 import styles from "./style.module.scss";
 import { useRef, useState, useEffect, useLayoutEffect, use } from "react";
 
-function Navbar({ isScreenOverMd, deviceType }) {
+function Navbar({ deviceType }) {
   const [isActive, setIsActive] = useState(false);
   const pathname = usePathname();
   const button = useRef(null);
@@ -49,8 +49,24 @@ function Navbar({ isScreenOverMd, deviceType }) {
     });
   }, []);
 
+  const [isScreenOverLg, setIsScreenOverLg] = useState(false);
+
   useEffect(() => {
-    isScreenOverMd
+    const checkWidth = () => {
+      setIsScreenOverLg(window.innerWidth > 1024);
+    };
+
+    checkWidth(); // Check once on mount
+
+    window.addEventListener("resize", checkWidth); // Add resize listener
+
+    return () => {
+      window.removeEventListener("resize", checkWidth); // Clean up
+    };
+  }, [isScreenOverLg]);
+
+  useEffect(() => {
+    isScreenOverLg
       ? gsap.to(button.current, {
           scale: 0,
           duration: 0.25,
@@ -61,7 +77,7 @@ function Navbar({ isScreenOverMd, deviceType }) {
           duration: 0.25,
           ease: "power1.out",
         });
-  }, [isScreenOverMd]);
+  }, [isScreenOverLg]);
 
   return (
     <>
@@ -77,19 +93,22 @@ function Navbar({ isScreenOverMd, deviceType }) {
         </Link>
 
         <ul className="hidden h-full gap-12 lg:flex">
-          {NAV_LINKS.map((link) => (
-            <Magnetic key={link.key}>
-              <div className={styles.el}>
-                <Link
-                  href={link.href}
-                  className="regular-16 text-white flexCenter cursor-pointer pb-1.5 transition-all hover:font-bold"
-                >
-                  {link.label}
-                </Link>
-                <div className={styles.indicator}></div>
-              </div>
-            </Magnetic>
-          ))}
+          {NAV_LINKS.map(
+            (link, index) =>
+              index !== 0 && (
+                <Magnetic key={link.key}>
+                  <div className={styles.el}>
+                    <Link
+                      href={link.href}
+                      className="regular-16 text-white flexCenter cursor-pointer pb-1.5 transition-all hover:font-bold"
+                    >
+                      {link.label}
+                    </Link>
+                    <div className={styles.indicator}></div>
+                  </div>
+                </Magnetic>
+              )
+          )}
         </ul>
 
         <Magnetic>
@@ -104,14 +123,6 @@ function Navbar({ isScreenOverMd, deviceType }) {
             </Link>
           </div>
         </Magnetic>
-
-        {/* <Image
-          src="/images/menu.svg"
-          alt="menu"
-          width={32}
-          height={32}
-          className="inline-block cursor-pointer lg:hidden"
-        /> */}
       </div>
       <div ref={button} className={styles.headerButtonContainer}>
         <Rounded

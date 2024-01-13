@@ -51,7 +51,7 @@
   }
 }
 
-@for $i from 1 through 4 {
+@for $i from 1 through 5 {
   .q#{$i}::after {
     content: url("../../public/images/faq_#{$i}.svg");
     position: absolute;

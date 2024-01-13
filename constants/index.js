@@ -1,5 +1,6 @@
 // NAVIGATION and Hamburger Menu
 export const NAV_LINKS = [
+  { href: "#hero", key: "top", label: "TOP" },
   { href: "#aboutUs", key: "about us", label: "ABOUT US" },
   { href: "#features", key: "features", label: "FEATURES " },
   { href: "#achievements", key: "achievements", label: "ACHIEVEMENTS" },
@@ -173,6 +174,11 @@ export const FAQ = [
     content:
       "スポカレが厳選したオススメカレンダーや話題の試合を「おすすめ」ページで紹介！気になるカレンダーや試合はコレクション登録しよう！",
   },
+  // {
+  //   id: 5,
+  //   title: "こんにちは！",
+  //   content: "こんにちは！",
+  // },
 ];
 
 // USER REVIEW SECTION

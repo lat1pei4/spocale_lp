@@ -37,6 +37,7 @@ export const theme = {
       "bg-achieve": "url('/images/title_achieve.svg')",
       "bg-review": "url('/images/title_reviews.svg')",
       "bg-faqs": "url('/images/title_faqs.svg')",
+      "bg-paris": "url('/images/paris.webp')",
     },
     screens: {
       xs: "400px",

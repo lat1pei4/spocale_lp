@@ -75,6 +75,16 @@
   height: 200px;
 }
 
+.q5::after {
+  content: url("../../public/images/faq_5.svg");
+  position: absolute;
+  scale: 0.5;
+  top: -63px;
+  left: -50px;
+  width: 150px;
+  height: 200px;
+}
+
 .accordionItem .content {
   height: 30px;
   width: 100%;

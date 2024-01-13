@@ -180,6 +180,7 @@ function Features() {
 
   const startTime = 3;
   const masterTimeline = gsap.timeline();
+
   masterTimeline.add(iphoneAnimation()).add(iconAnimation(), startTime);
 
   LOGO_ANIMATION.forEach((animation, index) => {
@@ -206,7 +207,7 @@ function Features() {
     <div id="features">
       <Title backgroundImage="bg-bg-feat">特徴</Title>
       <div className="feat feat--01">
-        <div className="feat--title regular-24 md:regular-40 text-white absolute top-[20dvh] w-[85dvw] md:w-[45dvw] right-2 xl:left-[50dvw]">
+        <div className="feat--title bold-24 md:regular-40 text-[#284c68] absolute top-[10dvh] w-[85dvw] md:w-[45dvw] right-2 xl:left-[50dvw]">
           <span className="hidden md:block">{`0 ${FEATURES[0].id}`}</span>
           {FEATURES[0].title}
         </div>
@@ -235,13 +236,14 @@ function Features() {
                 />
               );
             })}
+            x``
           </div>
         ) : (
           <Image
             src="/images/feat_01_phone.webp"
             width={250}
-            height={550}
-            style={{ width: "250px", height: "550px" }}
+            height={500}
+            style={{ width: "250px", height: "500px" }}
             alt="feature 01 phone visual"
             className="absolute left-[10dvw] top-[35dvh]"
           />
@@ -255,7 +257,7 @@ function Features() {
           alt="feature 02 main visual"
           className=" absolute left-0 top-[15dvh] z-[0.3]"
         />
-        <div className="feat--title regular-24 md:regular-40 absolute w-[60dvw] xl:w-[40dvw] top-[10dvh] left-[30dvw] text-white">
+        <div className="feat--title bold-24 md:regular-40 absolute w-[60dvw] xl:w-[40dvw] top-[10dvh] left-[30dvw] text-[#284c68]">
           <span className="hidden md:block">{`0 ${FEATURES[1].id}`}</span>
           {FEATURES[1].title}
         </div>
@@ -293,7 +295,7 @@ function Features() {
           alt="feature 03 phone visual"
           className="hidden xl:block absolute left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] z-[1.5]"
         />
-        <div className="feat--title regular-24 md:regular-40 w-[65dvw] md:w-[30dvw] absolute top-[0dvh] left-[10dvw] text-white">
+        <div className="feat--title bold-24 md:regular-40 w-[65dvw] md:w-[30dvw] absolute top-[0dvh] left-[10dvw] text-[#284c68]">
           <span className="hidden md:block">{`0 ${FEATURES[2].id}`}</span>
           {FEATURES[2].title}
         </div>
@@ -303,7 +305,7 @@ function Features() {
       </div>
       <div className="feat feat--04">
         <div className="h-[50dvh]">
-          <div className="feat--title regular-24 md:regular-40 absolute w-[80dvw] md:w-[45dvw] pr-10 top-[0dvh] md:top-[15dvh] right-0 xl:right-[5dvw] text-white">
+          <div className="feat--title bold-24 md:regular-40 absolute w-[80dvw] md:w-[45dvw] pr-10 top-[0dvh] md:top-[15dvh] right-0 xl:right-[5dvw] text-[#284c68]">
             <span className="hidden md:block">{`0 ${FEATURES[3].id}`}</span>
             {FEATURES[3].title}
           </div>

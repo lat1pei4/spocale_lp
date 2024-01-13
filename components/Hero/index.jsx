@@ -88,6 +88,7 @@ function Hero({ isScreenOverMd, deviceType }) {
       >
         <Navbar isScreenOverMd={isScreenOverMd} deviceType={deviceType} />
         <div
+          id="hero"
           className={
             isScreenOverMd
               ? "h-[100dvh] w-[110dvw] flex flex-col flex-nowrap kv relative md:flex-row"
