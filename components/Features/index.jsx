@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState, useRef, useCallback } from "react";
 import "./features.scss";
 import { FEATURES, ICONS, LOGO_ANIMATION } from "../../constants";
 import gsap from "gsap";
@@ -11,197 +11,205 @@ gsap.config({
   nullTargetWarn: false,
 });
 
+function iphoneAnimation() {
+  // Extracted outside of the component
+  const tl = gsap.timeline({ defaults: { duration: 3 } });
+  tl.to(".iphone", {
+    left: "15%",
+    rotation: 0,
+    scale: 0.9,
+    ease: "back",
+    filter: "blur(0px) grayscale(0%)",
+  }).to(".iphone", {
+    duration: 3,
+    scale: 1,
+  });
+  return tl;
+}
+
+function iconAnimation() {
+  // Extracted outside of the component
+  const tl = gsap.timeline();
+  tl.to(".icons", { duration: 0, opacity: 1 });
+  return tl;
+}
+
 function Features() {
-  // Gallery animation settings
+  // Use useCallback to memoize the function
+  const checkWidth = useCallback(() => {
+    setIsScreenOverLg(window.innerWidth > 1024);
+  }, []);
+
+  const [isScreenOverLg, setIsScreenOverLg] = useState(false);
+  useEffect(() => {
+    checkWidth(); // Check once on mount
+    window.addEventListener("resize", checkWidth); // Add resize listener
+    return () => {
+      window.removeEventListener("resize", checkWidth); // Clean up
+    };
+  }, [checkWidth]);
+
   const container = useRef(null);
   const { scrollYProgress } = useScroll({
     target: container,
     offset: ["start end", "end start"],
   });
 
-  const slider1 = [
-    {
-      color: "#e3e5e7",
-      src: "g_x1_01.webp",
-    },
-    {
-      color: "#d6d7dc",
-      src: "g_x1_02.webp",
-    },
-    {
-      color: "#e3e3e3",
-      src: "g_x1_03.webp",
-    },
-    {
-      color: "#e3e5e7",
-      src: "g_x1_04.webp",
-    },
-    {
-      color: "#e3e5e7",
-      src: "g_x1_05.webp",
-    },
-    {
-      color: "#d6d7dc",
-      src: "g_x1_06.webp",
-    },
-    {
-      color: "#e3e3e3",
-      src: "g_x1_07.webp",
-    },
-    {
-      color: "#21242b",
-      src: "g_x1_08.webp",
-    },
+  const sliders = [
+    [
+      {
+        color: "#e3e5e7",
+        src: "g_x1_01.webp",
+      },
+      {
+        color: "#d6d7dc",
+        src: "g_x1_02.webp",
+      },
+      {
+        color: "#e3e3e3",
+        src: "g_x1_03.webp",
+      },
+      {
+        color: "#e3e5e7",
+        src: "g_x1_04.webp",
+      },
+      {
+        color: "#e3e5e7",
+        src: "g_x1_05.webp",
+      },
+      {
+        color: "#d6d7dc",
+        src: "g_x1_06.webp",
+      },
+      {
+        color: "#e3e3e3",
+        src: "g_x1_07.webp",
+      },
+      {
+        color: "#21242b",
+        src: "g_x1_08.webp",
+      },
+    ],
+    [
+      {
+        color: "#e3e5e7",
+        src: "g_x2_01.webp",
+      },
+      {
+        color: "#d6d7dc",
+        src: "g_x2_02.webp",
+      },
+      {
+        color: "#e3e3e3",
+        src: "g_x2_03.webp",
+      },
+      {
+        color: "#e3e5e7",
+        src: "g_x2_04.webp",
+      },
+      {
+        color: "#e3e5e7",
+        src: "g_x2_05.webp",
+      },
+      {
+        color: "#d6d7dc",
+        src: "g_x2_06.webp",
+      },
+      {
+        color: "#e3e3e3",
+        src: "g_x2_07.webp",
+      },
+      {
+        color: "#e3e5e7",
+        src: "g_x2_08.webp",
+      },
+    ],
+    [
+      {
+        color: "#e3e5e7",
+        src: "g_x3_01.webp",
+      },
+      {
+        color: "#d6d7dc",
+        src: "g_x3_02.webp",
+      },
+      {
+        color: "#e3e3e3",
+        src: "g_x3_03.webp",
+      },
+      {
+        color: "#e3e5e7",
+        src: "g_x3_04.webp",
+      },
+      {
+        color: "#e3e5e7",
+        src: "g_x3_05.webp",
+      },
+      {
+        color: "#d6d7dc",
+        src: "g_x3_06.webp",
+      },
+      {
+        color: "#e3e3e3",
+        src: "g_x3_07.webp",
+      },
+      {
+        color: "#e3e5e7",
+        src: "g_x3_08.webp",
+      },
+    ],
   ];
 
-  const slider2 = [
-    {
-      color: "#e3e5e7",
-      src: "g_x2_01.webp",
-    },
-    {
-      color: "#d6d7dc",
-      src: "g_x2_02.webp",
-    },
-    {
-      color: "#e3e3e3",
-      src: "g_x2_03.webp",
-    },
-    {
-      color: "#e3e5e7",
-      src: "g_x2_04.webp",
-    },
-    {
-      color: "#e3e5e7",
-      src: "g_x2_05.webp",
-    },
-    {
-      color: "#d6d7dc",
-      src: "g_x2_06.webp",
-    },
-    {
-      color: "#e3e3e3",
-      src: "g_x2_07.webp",
-    },
-    {
-      color: "#e3e5e7",
-      src: "g_x2_08.webp",
-    },
+  const xTransforms = [
+    useTransform(scrollYProgress, [0, 1], [0, 150]),
+    useTransform(scrollYProgress, [0, 1], [0, -150]),
+    useTransform(scrollYProgress, [0, 1], [0, 300]),
   ];
-
-  const slider3 = [
-    {
-      color: "#e3e5e7",
-      src: "g_x3_01.webp",
-    },
-    {
-      color: "#d6d7dc",
-      src: "g_x3_02.webp",
-    },
-    {
-      color: "#e3e3e3",
-      src: "g_x3_03.webp",
-    },
-    {
-      color: "#e3e5e7",
-      src: "g_x3_04.webp",
-    },
-    {
-      color: "#e3e5e7",
-      src: "g_x3_05.webp",
-    },
-    {
-      color: "#d6d7dc",
-      src: "g_x3_06.webp",
-    },
-    {
-      color: "#e3e3e3",
-      src: "g_x3_07.webp",
-    },
-    {
-      color: "#e3e5e7",
-      src: "g_x3_08.webp",
-    },
-  ];
-
-  const x1 = useTransform(scrollYProgress, [0, 1], [0, 150]);
-  const x2 = useTransform(scrollYProgress, [0, 1], [0, -150]);
-  const x3 = useTransform(scrollYProgress, [0, 1], [0, 300]);
-  const height = useTransform(scrollYProgress, [0, 0.9], [50, 0]);
-
-  // end of Gallery animation settings
-
-  // Logo animation settings
-  gsap.registerPlugin(ScrollTrigger);
-  gsap.set(".iphone", {
-    left: "-10%",
-    top: "15%",
-    rotation: 90,
-    filter: "blur(2px) grayscale(80%)",
-  });
-  gsap.set(".icons", { left: "15%", top: "40%", scale: 0, opacity: 0 });
-
-  const [isScreenOverLg, setIsScreenOverLg] = useState(false);
 
   useEffect(() => {
-    const checkWidth = () => {
-      setIsScreenOverLg(window.innerWidth > 1024);
-    };
+    // Moving GSAP and ScrollTrigger registrations to useEffect to ensure they are registered only once
+    gsap.registerPlugin(ScrollTrigger);
 
-    checkWidth(); // Check once on mount
+    const masterTimeline = gsap.timeline();
+    masterTimeline.add(iphoneAnimation()).add(iconAnimation(), 3);
 
-    window.addEventListener("resize", checkWidth); // Add resize listener
-
-    return () => {
-      window.removeEventListener("resize", checkWidth); // Clean up
-    };
-  }, [isScreenOverLg]);
-
-  function iphoneAnimation() {
-    const tl = gsap.timeline({ defaults: { duration: 3 } });
-    tl.to(".iphone", {
-      left: "15%",
-      rotation: 0,
-      scale: 0.9,
-      ease: "back",
-      filter: "blur(0px) grayscale(0%)",
-    }).to(".iphone", {
-      duration: 3,
-      scale: 1,
+    LOGO_ANIMATION.forEach((animation, index) => {
+      const { selector, duration, scale, left, top, ease } = animation;
+      const element = document.querySelector(selector);
+      masterTimeline.add(
+        gsap.to(element, { duration, scale, left, top, ease }),
+        3 + (index % 3) / 2
+      );
     });
-    return tl;
-  }
 
-  function iconAnimation() {
-    const tl = gsap.timeline();
-    tl.to(".icons", { duration: 0, opacity: 1 });
-    return tl;
-  }
+    ScrollTrigger.create({
+      animation: masterTimeline,
+      trigger: ".feat--01",
+      start: "80% bottom",
+      end: "bottom bottom",
+      scrub: 1,
+    });
+  }, []);
 
-  const startTime = 3;
-  const masterTimeline = gsap.timeline();
-
-  masterTimeline.add(iphoneAnimation()).add(iconAnimation(), startTime);
-
-  LOGO_ANIMATION.forEach((animation, index) => {
-    const { selector, duration, scale, left, top, ease } = animation;
-    const element = document.querySelector(selector);
-    masterTimeline.add(
-      gsap.to(element, { duration, scale, left, top, ease }),
-      startTime + (index % 3) / 2
-    );
-  });
-
-  ScrollTrigger.create({
-    animation: masterTimeline,
-    trigger: ".feat--01",
-    start: "80% bottom",
-    end: "bottom bottom",
-    scrub: 1,
-    // markers: true,
-  });
-
-  // end of Logo animation settings
+  const renderGallery = (sliderData, transform) => (
+    <motion.div style={{ x: transform }} className="gallery">
+      {sliderData.map((project, index) => (
+        <div
+          key={index}
+          className="project"
+          style={{ backgroundColor: project.color }}
+        >
+          <div className="imageContainer">
+            <Image
+              fill={true}
+              alt={"image"}
+              src={`/images/gallery/${project.src}`}
+            />
+          </div>
+        </div>
+      ))}
+    </motion.div>
+  );
 
   return (
     <div id="features">
@@ -236,7 +244,6 @@ function Features() {
                 />
               );
             })}
-            x``
           </div>
         ) : (
           <Image
@@ -314,63 +321,9 @@ function Features() {
           </div>
         </div>
         <div ref={container} className="galleryImages">
-          <motion.div style={{ x: x1 }} className="gallery">
-            {slider1.map((project, index) => {
-              return (
-                <div
-                  key={index}
-                  className="project"
-                  style={{ backgroundColor: project.color }}
-                >
-                  <div className="imageContainer">
-                    <Image
-                      fill={true}
-                      alt={"image"}
-                      src={`/images/gallery/${project.src}`}
-                    />
-                  </div>
-                </div>
-              );
-            })}
-          </motion.div>
-          <motion.div style={{ x: x2 }} className="gallery">
-            {slider2.map((project, index) => {
-              return (
-                <div
-                  key={index}
-                  className="project"
-                  style={{ backgroundColor: project.color }}
-                >
-                  <div key={index} className="imageContainer">
-                    <Image
-                      fill={true}
-                      alt={"image"}
-                      src={`/images/gallery/${project.src}`}
-                    />
-                  </div>
-                </div>
-              );
-            })}
-          </motion.div>
-          <motion.div style={{ x: x3 }} className="gallery">
-            {slider3.map((project, index) => {
-              return (
-                <div
-                  key={index}
-                  className="project"
-                  style={{ backgroundColor: project.color }}
-                >
-                  <div className="imageContainer">
-                    <Image
-                      fill={true}
-                      alt={"image"}
-                      src={`/images/gallery/${project.src}`}
-                    />
-                  </div>
-                </div>
-              );
-            })}
-          </motion.div>
+          {sliders.map((slider, index) =>
+            renderGallery(slider, xTransforms[index])
+          )}
         </div>
       </div>
     </div>
