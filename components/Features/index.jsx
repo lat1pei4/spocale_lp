@@ -166,30 +166,36 @@ function Features() {
     useTransform(scrollYProgress, [0, 1], [0, 300]),
   ];
 
-  useEffect(() => {
-    // Moving GSAP and ScrollTrigger registrations to useEffect to ensure they are registered only once
-    gsap.registerPlugin(ScrollTrigger);
+  gsap.registerPlugin(ScrollTrigger);
+  gsap.set(".iphone", {
+    left: "-10%",
+    top: "15%",
+    rotation: 90,
+    filter: "blur(2px) grayscale(80%)",
+  });
+  gsap.set(".icons", { left: "15%", top: "40%", scale: 0, opacity: 0 });
 
-    const masterTimeline = gsap.timeline();
-    masterTimeline.add(iphoneAnimation()).add(iconAnimation(), 3);
+  // Moving GSAP and ScrollTrigger registrations to useEffect to ensure they are registered only once
 
-    LOGO_ANIMATION.forEach((animation, index) => {
-      const { selector, duration, scale, left, top, ease } = animation;
-      const element = document.querySelector(selector);
-      masterTimeline.add(
-        gsap.to(element, { duration, scale, left, top, ease }),
-        3 + (index % 3) / 2
-      );
-    });
+  const masterTimeline = gsap.timeline();
+  masterTimeline.add(iphoneAnimation()).add(iconAnimation(), 3);
 
-    ScrollTrigger.create({
-      animation: masterTimeline,
-      trigger: ".feat--01",
-      start: "80% bottom",
-      end: "bottom bottom",
-      scrub: 1,
-    });
-  }, []);
+  LOGO_ANIMATION.forEach((animation, index) => {
+    const { selector, duration, scale, left, top, ease } = animation;
+    const element = document.querySelector(selector);
+    masterTimeline.add(
+      gsap.to(element, { duration, scale, left, top, ease }),
+      3 + (index % 3) / 2
+    );
+  });
+
+  ScrollTrigger.create({
+    animation: masterTimeline,
+    trigger: ".feat--01",
+    start: "80% bottom",
+    end: "bottom bottom",
+    scrub: 1,
+  });
 
   const renderGallery = (sliderData, transform) => (
     <motion.div style={{ x: transform }} className="gallery">
