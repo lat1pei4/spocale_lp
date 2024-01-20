@@ -258,7 +258,7 @@ export const FOOTER_LINKS = [
 
 export const SOCIALS = {
   title: "Socials",
-  links: ["/images/x_logo.svg", "/images/facebook.svg", "/images/note.svg"],
+  links: ["/images/x.svg", "/images/facebook.svg", "/images/note.svg"],
   urls: [
     "https://twitter.com/spocale_jp",
     "https://www.facebook.com/spocale/",

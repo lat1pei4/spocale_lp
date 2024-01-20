@@ -106,38 +106,6 @@ const Footer = ({ deviceType }) => {
         </div>
       </div>
     </section>
-    // <footer className=" z-[-1]">
-    //   <div className="padding-container  flex w-full flex-col gap-14 h-[110dvh] pt-[200px] bg-[#000]">
-    //     <div className="flex flex-col items-start justify-center gap-[10%] ">
-    //       <Link href="/" className="mb-2 pl-2">
-    //         <Image
-    //           src="images/logo_white.svg"
-    //           alt="logo"
-    //           width={225}
-    //           height={45}
-    //         />
-    //       </Link>
-    //       <h2 className="pl-1.5 text-2xl font-bold text-white">
-    //         無料で手に入れよう！
-    //       </h2>
-    //       <p className="pl-1.5 text-xl text-white">スポーツ観戦情報アプリ</p>
-    //       <div className="flex p-0 m-0">
-    //         <Image
-    //           src="images/ios_qrcode.png"
-    //           alt="appstore"
-    //           width={120}
-    //           height={40}
-    //         />
-    //         <Image
-    //           src="images/ios_qrcode.png"
-    //           alt="googleplay"
-    //           width={120}
-    //           height={40}
-    //         />
-    //       </div>
-
-    //   </div>
-    // </footer>
   );
 };
 
