@@ -35,7 +35,7 @@
     "app/page.jsx",
     "components/Footer.jsx",
     "constants/index.js",
-    "components/Navbar.jsx",
+    "components/Navbar/Navbar.jsx",
     "tailwind.config.js",
     "components/Commons/Button.jsx",
     "components/Testimonial.jsx",

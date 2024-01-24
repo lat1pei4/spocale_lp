@@ -2,15 +2,15 @@ import { NAV_LINKS } from "@/constants";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { usePathname } from "next/navigation";
 import { AnimatePresence } from "framer-motion";
-import Nav from "./Nav";
+import Nav from "../Nav";
 import gsap from "gsap";
 import Image from "next/image";
 import Link from "next/link";
-import Button from "./Commons/Button";
-import Rounded from "./Commons/RoundedButton";
-import Magnetic from "./Commons/Magnetic";
+import Button from "../Commons/Button";
+import Rounded from "../Commons/RoundedButton";
+import Magnetic from "../Commons/Magnetic";
 import styles from "./style.module.scss";
-import { useRef, useState, useEffect, useLayoutEffect, use } from "react";
+import { useRef, useState, useEffect, useLayoutEffect } from "react";
 
 function Navbar({ deviceType }) {
   const [isActive, setIsActive] = useState(false);
