@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef, useCallback } from "react";
-import "./features.scss";
+import styles from "./style.module.scss";
 import { FEATURES, ICONS, LOGO_ANIMATION } from "../../constants";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -12,7 +12,6 @@ gsap.config({
 });
 
 function iphoneAnimation() {
-  // Extracted outside of the component
   const tl = gsap.timeline({ defaults: { duration: 3 } });
   tl.to(".iphone", {
     left: "15%",
@@ -27,8 +26,38 @@ function iphoneAnimation() {
   return tl;
 }
 
+const applyAnimation = (
+  triggerElement,
+  targetElement,
+  fromPosition,
+  toPosition
+) => {
+  gsap.set(targetElement, {
+    top: fromPosition,
+    opacity: 0.2,
+    filter: "blur(2px) grayscale(80%)",
+  });
+
+  gsap.to(targetElement, {
+    scrollTrigger: {
+      trigger: triggerElement,
+      scrub: true,
+      start: "top bottom",
+      end: "bottom bottom",
+    },
+    top: toPosition,
+    opacity: 1,
+    filter: "blur(0px) grayscale(0%)",
+    ease: "ease-in",
+  });
+};
+
+const createAnimation = () => {
+  applyAnimation("#feat--02", ".phone--image2", "20%", "0%");
+  applyAnimation("#feat--03", ".phone--image3", "60%", "50%");
+};
+
 function iconAnimation() {
-  // Extracted outside of the component
   const tl = gsap.timeline();
   tl.to(".icons", { duration: 0, opacity: 1 });
   return tl;
@@ -161,12 +190,16 @@ function Features() {
   ];
 
   const xTransforms = [
-    useTransform(scrollYProgress, [0, 1], [0, 150]),
+    useTransform(scrollYProgress, [0, 1], [0, 100]),
     useTransform(scrollYProgress, [0, 1], [0, -150]),
-    useTransform(scrollYProgress, [0, 1], [0, 300]),
+    useTransform(scrollYProgress, [0, 1], [0, -300]),
   ];
 
-  gsap.registerPlugin(ScrollTrigger);
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+    createAnimation();
+  }, []);
+
   gsap.set(".iphone", {
     left: "-10%",
     top: "15%",
@@ -174,8 +207,6 @@ function Features() {
     filter: "blur(2px) grayscale(80%)",
   });
   gsap.set(".icons", { left: "15%", top: "40%", scale: 0, opacity: 0 });
-
-  // Moving GSAP and ScrollTrigger registrations to useEffect to ensure they are registered only once
 
   const masterTimeline = gsap.timeline();
   masterTimeline.add(iphoneAnimation()).add(iconAnimation(), 3);
@@ -191,21 +222,25 @@ function Features() {
 
   ScrollTrigger.create({
     animation: masterTimeline,
-    trigger: ".feat--01",
+    trigger: "#feat--01",
     start: "80% bottom",
     end: "bottom bottom",
     scrub: 1,
   });
 
-  const renderGallery = (sliderData, transform) => (
-    <motion.div style={{ x: transform }} className="gallery">
+  const renderGallery = (sliderData, transform, index) => (
+    <motion.div
+      style={{ x: transform }}
+      className={styles.gallery}
+      key={`gallery-${index}`}
+    >
       {sliderData.map((project, index) => (
         <div
-          key={index}
-          className="project"
+          key={project.src}
+          className={styles.project}
           style={{ backgroundColor: project.color }}
         >
-          <div className="imageContainer">
+          <div className={styles.imageContainer}>
             <Image
               fill={true}
               alt={"image"}
@@ -218,15 +253,17 @@ function Features() {
   );
 
   return (
-    <div id="features">
+    <div id="features" className={styles.features}>
       <Title backgroundImage="bg-bg-feat">特徴</Title>
-      <div className="feat feat--01">
-        <div className="feat--title bold-24 md:regular-40 text-[#284c68] absolute top-[10dvh] w-[85dvw] md:w-[45dvw] right-2 xl:left-[50dvw]">
-          <span className="hidden md:block">{`0 ${FEATURES[0].id}`}</span>
+      <div id="feat--01" className={`${styles.feat} ${styles["feat--01"]}`}>
+        <span
+          className={`hidden md:block absolute w-[85vw] md:w-[45vw] right-2 xl:left-[45vw] ${styles["seq--num"]}`}
+        >{`0 ${FEATURES[0].id}`}</span>
+        <div className="feat--title pr-8 bold-24 md:regular-40 text-[#284c68] absolute top-[10vh] w-[85vw] md:w-[45vw] right-2 xl:left-[50vw]">
           {FEATURES[0].title}
         </div>
-        <div className="feat--content regular-20 md:regular-24 w-[60dvw] md:w-[40dvw] p-4 sm:p-10 bg-[#ebebeb] rounded-2xl absolute top-[75dvh] md:top-[50dvh] right-2 xl:left-[50dvw] z-[1]">
-          {FEATURES[0].description}
+        <div className="feat--content regular-20 md:regular-24 w-[60vw] md:w-[40vw] p-4 sm:p-10 bg-[#ebebeb] rounded-2xl absolute top-[75vh] md:top-[50vh] right-2 xl:left-[50vw] z-[1]">
+          &emsp;{FEATURES[0].description}
         </div>
         {isScreenOverLg ? (
           <div className="animation">
@@ -258,24 +295,26 @@ function Features() {
             height={500}
             style={{ width: "250px", height: "500px" }}
             alt="feature 01 phone visual"
-            className="absolute left-[10dvw] top-[35dvh]"
+            className="absolute left-[10vw] top-[25vh]"
           />
         )}
       </div>
-      <div className="feat feat--02">
+      <div id="feat--02" className={`${styles.feat} ${styles["feat--02"]}`}>
         <Image
           src="/images/feat_02_main.webp"
           width={850}
           height={500}
           alt="feature 02 main visual"
-          className=" absolute left-0 top-[15dvh] z-[0.3]"
+          className=" absolute left-0 top-[15vh] z-[0.3]"
         />
-        <div className="feat--title bold-24 md:regular-40 absolute w-[60dvw] xl:w-[40dvw] top-[10dvh] left-[30dvw] text-[#284c68]">
-          <span className="hidden md:block">{`0 ${FEATURES[1].id}`}</span>
+        <span
+          className={`hidden md:block absolute w-[60vw] xl:w-[40vw] left-[25vw] ${styles["seq--num"]}`}
+        >{`0 ${FEATURES[1].id}`}</span>
+        <div className="feat--title bold-24 md:regular-40 absolute w-[60vw] xl:w-[40vw] top-[10vh] left-[30vw] text-[#284c68]">
           {FEATURES[1].title}
         </div>
-        <div className="feat--content regular-20 md:regular-24 w-[80dvw] md:w-[40dvw] p-4 md:p-10 xl:pr-[8.5rem] bg-[#ebebeb] rounded-2xl absolute bottom-[15vh] right-[0] xl:right-[20vw] z-[0.5]">
-          {FEATURES[1].description}
+        <div className="feat--content regular-20 md:regular-24 w-[80vw] md:w-[40vw] p-4 md:p-10 xl:pr-[8.5rem] bg-[#ebebeb] rounded-2xl absolute bottom-[15vh] right-[0] xl:right-[20vw] z-[0.5]">
+          &emsp;{FEATURES[1].description}
         </div>
 
         <Image
@@ -283,52 +322,56 @@ function Features() {
           width={350}
           height={690}
           alt="feature 02 phone visual"
-          className="hidden xl:block absolute right-[3dvw] top-[10dvh] z-[1.5]"
+          className="hidden xl:block absolute right-[3vw] top-[10vh] z-[1.5] phone--image2"
         />
       </div>
-      <div className="feat feat--03">
+      <div id="feat--03" className={`${styles.feat} ${styles["feat--03"]}`}>
         <Image
           src="/images/feat_03_main_01.webp"
           width={500}
           height={500}
           alt="feature 02 main visual"
-          className="absolute right-[10dvw] top-[10dvh] z-[0.3]"
+          className="absolute right-[10vw] top-[10vh] z-[0.3]"
         />
         <Image
           src="/images/feat_03_main_02.webp"
           width={550}
           height={390}
           alt="feature 02 main visual"
-          className="hidden md:block absolute left-[10dvw] bottom-[10dvh] z-[0.3]"
+          className="hidden md:block absolute left-[10vw] bottom-[10vh] z-[0.3]"
         />
         <Image
           src="/images/feat_03_phone.webp"
           width={350}
           height={500}
           alt="feature 03 phone visual"
-          className="hidden xl:block absolute left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] z-[1.5]"
+          className="hidden xl:block absolute left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] z-[1.5] phone--image3"
         />
-        <div className="feat--title bold-24 md:regular-40 w-[65dvw] md:w-[30dvw] absolute top-[0dvh] left-[10dvw] text-[#284c68]">
-          <span className="hidden md:block">{`0 ${FEATURES[2].id}`}</span>
+        <span
+          className={`hidden md:block absolute top-[0vh] left-[2vw] ${styles["seq--num"]}`}
+        >{`0 ${FEATURES[2].id}`}</span>
+        <div className="feat--title bold-24 md:regular-40 w-[65vw] md:w-[30vw] absolute top-[10vh] left-[7vw] text-[#284c68]">
           {FEATURES[2].title}
         </div>
-        <div className="feat--content regular-20 md:regular-24 w-[85dvw] md:w-[45dvw] p-4 md:p-10 bg-[#ebebeb] rounded-2xl rounded-r-none absolute bottom-[15dvh] md:bottom-5 right-0 z-[0.5]">
-          {FEATURES[2].description}
+        <div className="feat--content regular-20 md:regular-24 w-[85vw] md:w-[45vw] p-4 md:p-10 bg-[#ebebeb] rounded-2xl rounded-r-none absolute bottom-[15vh] md:bottom-5 right-0 z-[0.5]">
+          &emsp;{FEATURES[2].description}
         </div>
       </div>
-      <div className="feat feat--04">
-        <div className="h-[50dvh]">
-          <div className="feat--title bold-24 md:regular-40 absolute w-[80dvw] md:w-[45dvw] pr-10 top-[0dvh] md:top-[15dvh] right-0 xl:right-[5dvw] text-[#284c68]">
-            <span className="hidden md:block">{`0 ${FEATURES[3].id}`}</span>
+      <div className={`${styles.feat} ${styles["feat--04"]}`}>
+        <div className="h-[50vh]">
+          <span
+            className={`hidden md:block absolute top-[5vh] right-[35vw] xl:right-[45vw] ${styles["seq--num"]}`}
+          >{`0 ${FEATURES[3].id}`}</span>
+          <div className="feat--title bold-24 md:regular-40 absolute w-[80vw] md:w-[45vw] pr-10 top-[0vh] md:top-[15vh] right-0 xl:right-[5vw] text-[#284c68]">
             {FEATURES[3].title}
           </div>
-          <div className="feat--content regular-20 md:regular-24 w-[80dvw] md:w-[45dvw] p-4 md:p-10 bg-[#ebebeb] rounded-2xl rounded-l-none absolute top-[15dvh] md:top-[-5dvh] xl:top-[10dvh] left-0 z-[0.5]">
-            {FEATURES[3].description}
+          <div className="feat--content regular-20 md:regular-24 w-[80vw] md:w-[45vw] p-4 md:p-10 bg-[#ebebeb] rounded-2xl rounded-l-none absolute top-[15vh] md:top-[-5vh] xl:top-[10vh] left-0 z-[0.5]">
+            &emsp;{FEATURES[3].description}
           </div>
         </div>
-        <div ref={container} className="galleryImages">
+        <div ref={container} className={styles.galleryImages}>
           {sliders.map((slider, index) =>
-            renderGallery(slider, xTransforms[index])
+            renderGallery(slider, xTransforms[index], index)
           )}
         </div>
       </div>
