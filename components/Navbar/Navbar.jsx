@@ -96,17 +96,19 @@ function Navbar({ deviceType }) {
           {NAV_LINKS.map(
             (link, index) =>
               index !== 0 && (
-                <Magnetic key={link.key}>
-                  <div className={styles.el}>
-                    <Link
-                      href={link.href}
-                      className="regular-16 text-white flexCenter cursor-pointer pb-1.5 transition-all hover:font-bold"
-                    >
-                      {link.label}
-                    </Link>
-                    <div className={styles.indicator}></div>
-                  </div>
-                </Magnetic>
+                <li key={link.key}>
+                  <Magnetic>
+                    <div className={styles.el}>
+                      <Link
+                        href={link.href}
+                        className="regular-16 text-white flexCenter cursor-pointer pb-1.5 transition-all hover:font-bold"
+                      >
+                        {link.label}
+                      </Link>
+                      <div className={styles.indicator}></div>
+                    </div>
+                  </Magnetic>
+                </li>
               )
           )}
         </ul>
