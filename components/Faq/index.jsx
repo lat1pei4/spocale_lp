@@ -1,5 +1,4 @@
-import { useState, useRef } from "react";
-import { useScroll, useTransform, motion } from "framer-motion";
+import { useState } from "react";
 import { FAQ } from "../../constants";
 import Title from "../Commons/Title";
 import "./faq.scss";

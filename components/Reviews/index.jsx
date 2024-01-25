@@ -29,7 +29,7 @@ function index() {
             slideShadows: false,
           }}
           pagination={true}
-          loop={true}
+          loop={false}
           modules={[EffectCoverflow, Pagination]}
           id="swiper"
         >

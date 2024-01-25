@@ -5,7 +5,7 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "swiper/css/effect-fade";
 import "./hero.scss";
-import { useState, useEffect, useRef, useLayoutEffect } from "react";
+import { useRef, useLayoutEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import { slideUp } from "./animation";
@@ -217,7 +217,7 @@ function Hero({ isScreenOverMd, deviceType }) {
             alt="catch_copy"
             width={400}
             height={300}
-            className="absolute top-1/2 left-[50%] md:left-[47%] transform -translate-x-1/2 -translate-y-1/2 z-[1] w-full h-auto max-w-xs md:max-w-sm lg:max-w-md"
+            className="absolute top-1/2 left-[50%] md:left-[47%] transform -translate-x-1/2 -translate-y-1/2 z-[2] w-full h-auto max-w-xs md:max-w-sm lg:max-w-md"
             priority={true}
           />
         </div>

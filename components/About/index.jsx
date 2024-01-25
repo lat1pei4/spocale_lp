@@ -31,7 +31,7 @@ const About = () => {
           alt="phone"
           width={1000}
           height={1000}
-          className="hidden right-[-40%] bottom-[-10%] sm:absolute sm:block sm:right-[-30%] xl:right-[-15%] 2xl:right-[0%]"
+          className="hidden right-[-40%] bottom-[-10%] sm:absolute sm:block sm:right-[-30%] xl:right-[-15%] 2xl:right-[-7%]"
         />
 
         <Image

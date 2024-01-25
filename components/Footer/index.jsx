@@ -1,12 +1,12 @@
 "use client";
-import { FOOTER_CONTACT_INFO, FOOTER_LINKS, SOCIALS } from "@/constants";
+import { FOOTER_LINKS, SOCIALS } from "@/constants";
 import Image from "next/image";
 import Link from "next/link";
 
 const Footer = ({ deviceType }) => {
   return (
     <section id="footer" className="w-full flex-col">
-      <div className=" relative flex w-full  flex-col justify-between gap-32 overflow-hidden bg-[#284c68] px-6 py-12 text-white sm:flex-row sm:gap-12 sm:py-24 lg:px-20 lg:max-h-[598px]">
+      <div className=" relative flex w-full flex-col justify-between gap-32 overflow-hidden bg-[#284c68] px-6 py-12 text-white sm:flex-row sm:gap-12 sm:py-24 lg:px-20 lg:max-h-[700px]">
         <div className=" flex w-full flex-1 flex-col items-start justify-center gap-4">
           <div className="flex flex-1 items-center justify-end">
             <Image
@@ -18,7 +18,7 @@ const Footer = ({ deviceType }) => {
             />
           </div>
           <h2 className="bold-40 lg:bold-64 lg:max-w-[320px] pt-10">
-            <span className="relative  dot">無料</span>で手に入れよう！
+            <span className="relative dot">無料</span>で手に入れよう！
           </h2>
           <p className="regular-18 sm:regular-24  text-gray-10">
             スポーツ観戦情報アプリ
@@ -99,7 +99,7 @@ const Footer = ({ deviceType }) => {
                 </ul>
               </FooterColumn>
             ))}
-            <p className="regular-14 w-full text-left pb-8 text-white">
+            <p className="regular-14 w-full text-left pb-16 text-white">
               COPYRIGHT @ SPOCALE 2023 All rights reserved.
             </p>
           </div>
