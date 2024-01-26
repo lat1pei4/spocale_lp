@@ -113,18 +113,16 @@ function Navbar({ deviceType }) {
           )}
         </ul>
 
-        <Magnetic>
-          <div className="xl:flexCenter hidden">
-            <Link href="#footer">
-              <Button
-                type="button"
-                title="無料ダウンロード"
-                icon="/images/downloads.webp"
-                variant="btn_dark_green"
-              />
-            </Link>
-          </div>
-        </Magnetic>
+        <div className="xl:flexCenter hidden">
+          <Link href="#footer">
+            <Button
+              type="button"
+              title="無料ダウンロード"
+              icon="/images/downloads.webp"
+              variant="btn_dark_green"
+            />
+          </Link>
+        </div>
       </div>
       <div ref={button} className={styles.headerButtonContainer}>
         <Rounded
