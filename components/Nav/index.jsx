@@ -10,7 +10,7 @@ import { NAV_LINKS } from "@/constants";
 import Image from "next/image";
 import Link from "next/link";
 
-export default function Index({ deviceType }) {
+export default function Index({ deviceType, onClose }) {
   const pathname = usePathname();
   const [selectedIndicator, setSelectedIndicator] = useState(pathname);
 
@@ -38,6 +38,7 @@ export default function Index({ deviceType }) {
               data={{ ...data, index }}
               isActive={selectedIndicator === data.href}
               setSelectedIndicator={setSelectedIndicator}
+              onNavigate={onClose}
             />
           ))}
         </div>
