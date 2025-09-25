@@ -17,12 +17,9 @@ function Navbar({ deviceType }) {
   const pathname = usePathname();
   const button = useRef(null);
 
-  useEffect(
-    (isActive) => {
-      isActive && setIsActive(false);
-    },
-    [pathname, isActive]
-  );
+  useEffect(() => {
+    setIsActive(false);
+  }, [pathname]);
 
   useLayoutEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -141,7 +138,9 @@ function Navbar({ deviceType }) {
         </Rounded>
       </div>
       <AnimatePresence mode="wait">
-        {isActive && <Nav deviceType={deviceType} />}
+        {isActive && (
+          <Nav deviceType={deviceType} onClose={() => setIsActive(false)} />
+        )}
       </AnimatePresence>
     </>
   );
