@@ -18,8 +18,10 @@ function Navbar({ deviceType }) {
   const button = useRef(null);
 
   useEffect(() => {
-    setIsActive(false);
-  }, [pathname]);
+    if (isActive) {
+      setIsActive(false);
+    }
+  }, [pathname, isActive]);
 
   useLayoutEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
