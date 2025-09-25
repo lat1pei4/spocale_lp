@@ -3,7 +3,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { slide, scale } from "../animation";
 
-export default function Index({ data, isActive, setSelectedIndicator }) {
+export default function Index({ data, isActive, setSelectedIndicator, onNavigate }) {
   const { label, href, index, key } = data;
 
   return (
@@ -23,7 +23,16 @@ export default function Index({ data, isActive, setSelectedIndicator }) {
         animate={isActive ? "open" : "closed"}
         className={styles.indicator}
       ></motion.div>
-      <Link href={href}>{label}</Link>
+      <Link
+        href={href}
+        onClick={() => {
+          if (onNavigate) {
+            onNavigate();
+          }
+        }}
+      >
+        {label}
+      </Link>
     </motion.div>
   );
 }
